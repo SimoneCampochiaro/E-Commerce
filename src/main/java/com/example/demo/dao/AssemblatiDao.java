@@ -1,14 +1,13 @@
 package com.example.demo.dao;
 
-
-import com.example.demo.model.ComponentiAssemblato;
+import com.example.demo.model.Assemblati;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.*;
 import java.util.List;
+
 
 @Repository
 public class AssemblatiDao {
@@ -38,7 +37,7 @@ public class AssemblatiDao {
     public void deleteAssemblati(List<Assemblati> assemblati) {
         Session currentSession = entityManager.unwrap(Session.class);
         for (Assemblati a : assemblati) {
-            currentSession.delete(currentSession.find(Assemblati.class, ca.getIdAssemblati()));
+            currentSession.delete(currentSession.find(Assemblati.class, a.getIdAssemblato()));
         }
     }
 
