@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.Date;
