@@ -20,7 +20,7 @@ public class Prenotazioni {
 
     @JoinColumn(name = "id_anagrafica_clienti")
     @ManyToOne
-    @JsonIgnoreProperties("clienti")
+    @JsonIgnoreProperties("anagrafica_clienti")
     private Clienti clienti;
 
     @JoinColumn(name = "id_carrello")

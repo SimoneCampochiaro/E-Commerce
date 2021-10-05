@@ -1,5 +1,6 @@
 package com.example.demo.dao;
 
+import com.example.demo.model.Fornitori;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -41,7 +42,7 @@ public class FornitoriDao {
     public void deleteFornitori(List<Fornitori> fornitori) {
         Session currentSession = entityManager.unwrap(Session.class);
         for (Fornitori f : fornitori) {
-            currentSession.delete(currentSession.find(Fornitori.class, f.getIdFornitori()));
+            currentSession.delete(currentSession.find(Fornitori.class, f.getIdAnagraficaFornitori()));
         }
     }
 
