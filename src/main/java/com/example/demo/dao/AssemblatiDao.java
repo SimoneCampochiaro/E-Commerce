@@ -38,6 +38,7 @@ public class AssemblatiDao {
         Session currentSession = entityManager.unwrap(Session.class);
         for (Assemblati a : assemblati) {
             currentSession.delete(currentSession.find(Assemblati.class, a.getIdAssemblato()));
+
         }
     }
 
