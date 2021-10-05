@@ -1,8 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Carrello;
-import com.example.demo.model.Clienti;
-import com.example.demo.service.CarrelloService;
+import com.example.demo.model.ComponentiAssemblato;
+import com.example.demo.service.ComponentiAssemblatoService;
 import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,11 +10,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping
-public class ComponentiAssemblato {
+public class ComponentiAssemblatoController {
 
     @Autowired
 
-    private ComponentiAssemblato componentiAssemblato;
+    private ComponentiAssemblatoService componentiAssemblatoService;
 
     @GetMapping("/get-componentiAssemblato")
     public List<ComponentiAssemblato> getComponentiAssemblato(){
@@ -23,7 +22,7 @@ public class ComponentiAssemblato {
     }
 
     @GetMapping("/get-componentiAssemblato/{id}")
-    public ComponentiAssemblati getComponentiAssemblatoById(@PathVariable("id") Integer id){
+    public ComponentiAssemblato getComponentiAssemblatoById(@PathVariable("id") Integer id){
         return componentiAssemblatoService.getComponentiAssemblatoById(id);
     }
 

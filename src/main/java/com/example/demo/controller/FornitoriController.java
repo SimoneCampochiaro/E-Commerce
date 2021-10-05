@@ -18,6 +18,7 @@ public class FornitoriController {
 
     @GetMapping("/get-fornitore")
     public List<Fornitori> getFornitori() {
+
         return fornitoriService.getFornitori();
     }
 

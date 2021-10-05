@@ -42,9 +42,10 @@ public class AssemblatiDao {
         }
     }
 
-    public void deleteAssemblati(Integer id) {
+    public void deleteAssemblatiById(Integer id) {
         Session currentSession = entityManager.unwrap(Session.class);
         currentSession.delete(currentSession.find(Assemblati.class, id));
     }
+
 
 }

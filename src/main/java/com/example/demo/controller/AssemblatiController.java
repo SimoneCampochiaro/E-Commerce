@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Assemblati;
 import com.example.demo.model.Carrello;
 import com.example.demo.model.Clienti;
+import com.example.demo.service.AssemblatiService;
 import com.example.demo.service.CarrelloService;
 import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +13,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping
-public class Assemblati {
+public class AssemblatiController{
 
     @Autowired
 
-    private Assemblati assemblati;
+    private AssemblatiService assemblatiService;
 
     @GetMapping("/get-assemblati")
     public List<Assemblati> getAssemblati(){

@@ -1,7 +1,9 @@
 package com.example.demo.service;
 
 import com.example.demo.dao.CarrelloDao;
+import com.example.demo.dao.ComponentiAssemblatoDao;
 import com.example.demo.model.Carrello;
+import com.example.demo.model.ComponentiAssemblato;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +35,6 @@ public class ComponentiAssemblatoService {
     }
 
     public void deleteComponentiAssemblatoById(Integer id){
-        componentiAssemblatoDao.deleteAssemblatiById(id);
+        componentiAssemblatoDao.deleteComponentiAssemblatoById(id);
     }
 }
