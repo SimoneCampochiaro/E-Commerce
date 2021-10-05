@@ -27,7 +27,7 @@ public class ComponentiDao {
         return c;
     }
 
-    public void saveOrUpdateComponeti(List<Componenti> componenti) {
+    public void saveOrUpdateComponenti(List<Componenti> componenti) {
         Session currentSession = entityManager.unwrap(Session.class);
 
         for (Componenti c : componenti) {

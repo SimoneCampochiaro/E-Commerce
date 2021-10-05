@@ -25,18 +25,12 @@ public class FornitoriDao {
         Fornitori f = currentSession.find(Fornitori.class, id);
         return f;
     }
-    /*public void saveOrUpdateFornitori(List<Fornitori> progettis) {
+    public void saveOrUpdateFornitori(List<Fornitori> fornitori) {
         Session currentSession = entityManager.unwrap(Session.class);
-        Session updateSession = entityManager.unwrap(Session.class);
-
-        for (Progetti p : progettis) {
-            for (Dipendenti d : p.getDipendentis()) {
-                d.setProgettis(progettis);
-                updateSession.saveOrUpdate(d);
-            }
-            currentSession.saveOrUpdate(p);
+        for (Fornitori f : fornitori) {
+            currentSession.saveOrUpdate(f);
         }
-    }*/
+    }
 
     public void deleteFornitori(List<Fornitori> fornitori) {
         Session currentSession = entityManager.unwrap(Session.class);
