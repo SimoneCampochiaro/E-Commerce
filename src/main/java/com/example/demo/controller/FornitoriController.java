@@ -16,28 +16,28 @@ public class FornitoriController {
     @Autowired
     private FornitoriService fornitoriService;
 
-    @GetMapping("/get-fornitore")
+    @GetMapping("api/get-fornitore")
     public List<Fornitori> getFornitori() {
 
         return fornitoriService.getFornitori();
     }
 
-    @GetMapping("/get-fornitore/{id}")
+    @GetMapping("api/get-fornitore/{id}")
     public Fornitori getFornitoriById(@PathVariable("id") Integer id){
         return fornitoriService.getFornitoriById(id);
     }
 
-    @PostMapping("/save-fornitore")
+    @PostMapping("api/save-fornitore")
     public void saveFornitori(@RequestBody @NotNull List<Fornitori> fornitori){
         fornitoriService.saveOrUpdateFornitori(fornitori);
     }
 
-    @DeleteMapping("/cancella-fornitore")
+    @DeleteMapping("api/cancella-fornitore")
     public void deleteFornitori(@RequestBody @NotNull List<Fornitori> fornitori){
         fornitoriService.deleteFornitori(fornitori);
     }
 
-    @DeleteMapping("/cancella-fornitore/{id}")
+    @DeleteMapping("api/cancella-fornitore/{id}")
     public void deleteFornitoriById(@PathVariable("id") Integer id){
         fornitoriService.deleteFornitoriById(id);
     }

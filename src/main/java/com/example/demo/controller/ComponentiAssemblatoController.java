@@ -16,27 +16,27 @@ public class ComponentiAssemblatoController {
 
     private ComponentiAssemblatoService componentiAssemblatoService;
 
-    @GetMapping("/get-componentiAssemblato")
+    @GetMapping("api/get-componentiAssemblato")
     public List<ComponentiAssemblato> getComponentiAssemblato(){
         return componentiAssemblatoService.getComponentiAssemblato();
     }
 
-    @GetMapping("/get-componentiAssemblato/{id}")
+    @GetMapping("api/get-componentiAssemblato/{id}")
     public ComponentiAssemblato getComponentiAssemblatoById(@PathVariable("id") Integer id){
         return componentiAssemblatoService.getComponentiAssemblatoById(id);
     }
 
-    @PostMapping("/save-componentiAssemblato")
+    @PostMapping("api/save-componentiAssemblato")
     public void saveComponentiAssemblato(@RequestBody @NotNull List<ComponentiAssemblato> componentiAssemblato){
         componentiAssemblatoService.saveOrUpdateComponentiAssemblato(componentiAssemblato);
     }
 
-    @DeleteMapping("/cancella-componentiAssemblato")
+    @DeleteMapping("api/cancella-componentiAssemblato")
     public void deleteComponentiAssemblato(@RequestBody @NotNull List<ComponentiAssemblato> componentiAssemblati){
         componentiAssemblatoService.deleteComponentiAssemblato(componentiAssemblati);
     }
 
-    @DeleteMapping("/cancella-componenteAssemblato/{id}")
+    @DeleteMapping("api/cancella-componenteAssemblato/{id}")
     public void deleteComponentiAssemblatoById(@PathVariable("id") Integer id){
         componentiAssemblatoService.deleteComponentiAssemblatoById(id);
     }

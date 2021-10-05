@@ -16,27 +16,27 @@ public class ClientiController {
 
     private ClientiService clientiService;
 
-    @GetMapping("/get-cliente")
+    @GetMapping("api/get-cliente")
     public List<Clienti> getClienti(){
         return clientiService.getClienti();
     }
 
-    @GetMapping("/get-cliente/{id}")
+    @GetMapping("api/get-cliente/{id}")
     public Clienti getClientiById(@PathVariable("id") Integer id){
         return clientiService.getClientiById(id);
     }
 
-    @PostMapping("/save-cliente")
+    @PostMapping("api/save-cliente")
     public void saveClienti(@RequestBody @NotNull List<Clienti> clienti){
         clientiService.saveOrUpdateClienti(clienti);
     }
 
-    @DeleteMapping("/cancella-cliente")
+    @DeleteMapping("api/cancella-cliente")
     public void deleteClienti(@RequestBody @NotNull List<Clienti> clienti){
         clientiService.deleteClienti(clienti);
     }
 
-    @DeleteMapping("/cancella-cliente/{id}")
+    @DeleteMapping("api/cancella-cliente/{id}")
     public void deleteClientiById(@PathVariable("id") Integer id){
         clientiService.deleteClientiById(id);
     }
