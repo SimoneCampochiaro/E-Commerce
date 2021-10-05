@@ -26,16 +26,16 @@ public class Componenti {
     private String codiceComponente;
 
     @Column(name = "quantita")
-    private int quantita;
+    private Integer quantita;
 
     @Column(name = "disponibilita")
-    private boolean disponibilita;
+    private Boolean disponibilita;
 
     @Column(name="prezzo_di_acquisto")
-    private double prezzoDiAcquisto;
+    private Double prezzoDiAcquisto;
 
     @Column(name = "prezzo_di_vendita")
-    private double prezzoDiVendita;
+    private Double prezzoDiVendita;
 
     @JoinColumn(name = "id_anagrafica_fornitore")
     @ManyToOne

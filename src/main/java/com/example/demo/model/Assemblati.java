@@ -1,10 +1,13 @@
 package com.example.demo.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "assemblati")
+@Data
 
 public class Assemblati {
     @Id

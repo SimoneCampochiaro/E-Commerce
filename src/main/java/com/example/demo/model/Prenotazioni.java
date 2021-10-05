@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 @Entity
 @Table(name = "prenotazioni")
@@ -14,9 +17,9 @@ public class Prenotazioni {
     @Column(name = "id_prenotazione")
     private Integer idPrenotazione;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "data_ritiro") //aggiungere ora ritiro
-    private Date dataRitiro;
+    private Calendar dataRitiro;
 
     @JoinColumn(name = "id_anagrafica_clienti")
     @ManyToOne
