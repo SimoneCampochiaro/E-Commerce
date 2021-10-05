@@ -41,7 +41,7 @@ public class Clienti {
     private String passwordCliente;
 
     @OneToMany(mappedBy = "clienti")
-    List<Carello> carello;
+    List<Carrello> carello;
 
 
 }

@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 @Table(name = "carrello")
 @Data
-public class Carello {
+public class Carrello {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_carrello")

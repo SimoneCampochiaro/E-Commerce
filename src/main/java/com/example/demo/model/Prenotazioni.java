@@ -26,5 +26,5 @@ public class Prenotazioni {
     @JoinColumn(name = "id_carrello")
     @ManyToOne
     @JsonIgnoreProperties("carrello")
-    private Carello carello;
+    private Carrello carello;
 }
