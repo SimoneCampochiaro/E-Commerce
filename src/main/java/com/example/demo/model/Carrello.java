@@ -27,9 +27,9 @@ public class Carrello {
     @JsonIgnoreProperties("anagrafica_clienti")
     private Clienti clienti;
 
-    @JoinColumn(name = "id_compoente")
+    @JoinColumn(name = "id_componente")
     @ManyToOne
-    @JsonIgnoreProperties("componenti")
-    private Componenti componenti;
+    @JsonIgnoreProperties("prodotti")
+    private Prodotti prodotti;
 
 }

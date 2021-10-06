@@ -1,6 +1,6 @@
 package com.example.demo.dao;
 
-import com.example.demo.model.Componenti;
+import com.example.demo.model.Prodotti;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,34 +16,34 @@ public class ComponentiDao {
     @Autowired
     private EntityManager entityManager;
 
-    public List<Componenti> getComponenti() {
+    public List<Prodotti> getComponenti() {
         Session currentSession = entityManager.unwrap(Session.class);
-        return currentSession.createQuery("FROM Componenti",Componenti.class).getResultList();
+        return currentSession.createQuery("FROM Prodotti", Prodotti.class).getResultList();
     }
 
-    public Componenti getComponentiById(Integer id) {
+    public Prodotti getComponentiById(Integer id) {
         Session currentSession = entityManager.unwrap(Session.class);
-        Componenti c = currentSession.find(Componenti.class, id);
+        Prodotti c = currentSession.find(Prodotti.class, id);
         return c;
     }
 
-    public void saveOrUpdateComponenti(List<Componenti> componenti) {
+    public void saveOrUpdateComponenti(List<Prodotti> prodotti) {
         Session currentSession = entityManager.unwrap(Session.class);
 
-        for (Componenti c : componenti) {
+        for (Prodotti c : prodotti) {
             currentSession.saveOrUpdate(c);
         }
     }
 
-    public void deleteComponenti(List<Componenti> componenti) {
+    public void deleteComponenti(List<Prodotti> prodotti) {
         Session currentSession = entityManager.unwrap(Session.class);
-        for (Componenti c : componenti) {
-            currentSession.delete(currentSession.find(Componenti.class, c.getIdComponente()));
+        for (Prodotti c : prodotti) {
+            currentSession.delete(currentSession.find(Prodotti.class, c.getIdComponente()));
         }
     }
 
     public void deleteComponentiById(Integer id) {
         Session currentSession = entityManager.unwrap(Session.class);
-        currentSession.delete(currentSession.find(Componenti.class, id));
+        currentSession.delete(currentSession.find(Prodotti.class, id));
     }
 }

@@ -6,25 +6,20 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "componenti_assemblato")
+@Table(name = "prodotti_assemblato")
 @Data
 
-public class ComponentiAssemblato {
+public class ProdottiAssemblato {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_componenti_assemblato")
     private Integer idComponentiAssemblato;
 
 
-
-    @OneToOne(mappedBy = "componenti_assemblato")
-    private Assemblati assemblati;
-
-
     @JoinColumn(name = "id_componente")
     @ManyToOne
-    @JsonIgnoreProperties("componenti")
-    private Componenti componenti;
+    @JsonIgnoreProperties("prodotti")
+    private Prodotti prodotti;
 
 
 }

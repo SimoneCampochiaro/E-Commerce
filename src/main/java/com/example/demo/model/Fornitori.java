@@ -40,5 +40,5 @@ public class Fornitori {
     private String sito_web;
 
     @OneToMany(mappedBy = "fornitori")
-    List<Componenti> componenti;
+    List<Prodotti> prodotti;
 }

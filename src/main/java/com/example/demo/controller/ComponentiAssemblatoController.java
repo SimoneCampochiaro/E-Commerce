@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.ComponentiAssemblato;
+import com.example.demo.model.ProdottiAssemblato;
 import com.example.demo.service.ComponentiAssemblatoService;
 import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,22 +17,22 @@ public class ComponentiAssemblatoController {
     private ComponentiAssemblatoService componentiAssemblatoService;
 
     @GetMapping("/get-componentiAssemblato")
-    public List<ComponentiAssemblato> getComponentiAssemblato(){
+    public List<ProdottiAssemblato> getComponentiAssemblato(){
         return componentiAssemblatoService.getComponentiAssemblato();
     }
 
     @GetMapping("/get-componentiAssemblato/{id}")
-    public ComponentiAssemblato getComponentiAssemblatoById(@PathVariable("id") Integer id){
+    public ProdottiAssemblato getComponentiAssemblatoById(@PathVariable("id") Integer id){
         return componentiAssemblatoService.getComponentiAssemblatoById(id);
     }
 
     @PostMapping("/save-componentiAssemblato")
-    public void saveComponentiAssemblato(@RequestBody @NotNull List<ComponentiAssemblato> componentiAssemblato){
-        componentiAssemblatoService.saveOrUpdateComponentiAssemblato(componentiAssemblato);
+    public void saveComponentiAssemblato(@RequestBody @NotNull List<ProdottiAssemblato> prodottiAssemblatoes){
+        componentiAssemblatoService.saveOrUpdateComponentiAssemblato(prodottiAssemblatoes);
     }
 
     @DeleteMapping("/cancella-componentiAssemblato")
-    public void deleteComponentiAssemblato(@RequestBody @NotNull List<ComponentiAssemblato> componentiAssemblati){
+    public void deleteComponentiAssemblato(@RequestBody @NotNull List<ProdottiAssemblato> componentiAssemblati){
         componentiAssemblatoService.deleteComponentiAssemblato(componentiAssemblati);
     }
 

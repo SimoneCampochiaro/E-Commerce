@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.dao.ComponentiAssemblatoDao;
-import com.example.demo.model.ComponentiAssemblato;
+import com.example.demo.model.ProdottiAssemblato;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,20 +15,20 @@ public class ComponentiAssemblatoService {
     @Autowired
     private ComponentiAssemblatoDao componentiAssemblatoDao;
 
-    public List<ComponentiAssemblato> getComponentiAssemblato(){
+    public List<ProdottiAssemblato> getComponentiAssemblato(){
         return componentiAssemblatoDao.getComponentiAssemblato();
     }
 
-    public ComponentiAssemblato getComponentiAssemblatoById(Integer id){
+    public ProdottiAssemblato getComponentiAssemblatoById(Integer id){
         return componentiAssemblatoDao.getComponentiAssemblatoById(id);
     }
 
-    public void saveOrUpdateComponentiAssemblato(List<ComponentiAssemblato> componentiAssemblato){
-        componentiAssemblatoDao.saveOrUpdateComponentiAssemblato(componentiAssemblato);
+    public void saveOrUpdateComponentiAssemblato(List<ProdottiAssemblato> prodottiAssemblatoes){
+        componentiAssemblatoDao.saveOrUpdateComponentiAssemblato(prodottiAssemblatoes);
     }
 
-    public void deleteComponentiAssemblato(List<ComponentiAssemblato> componentiAssemblato){
-        componentiAssemblatoDao.deleteComponentiAssemblato(componentiAssemblato);
+    public void deleteComponentiAssemblato(List<ProdottiAssemblato> prodottiAssemblatoes){
+        componentiAssemblatoDao.deleteComponentiAssemblato(prodottiAssemblatoes);
     }
 
     public void deleteComponentiAssemblatoById(Integer id){

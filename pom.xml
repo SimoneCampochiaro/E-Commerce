@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>E-Commerce</name>
-	<description>Progetto di un e-commerce che vende componenti e pc assemblati</description>
+	<description>Progetto di un e-commerce che vende prodotti e pc assemblati</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

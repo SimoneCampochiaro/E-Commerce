@@ -1,7 +1,7 @@
 package com.example.demo.dao;
 
 
-import com.example.demo.model.ComponentiAssemblato;
+import com.example.demo.model.ProdottiAssemblato;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,35 +16,35 @@ public class ComponentiAssemblatoDao {
     @Autowired
     private EntityManager entityManager;
 
-    public List<ComponentiAssemblato> getComponentiAssemblato() {
+    public List<ProdottiAssemblato> getComponentiAssemblato() {
         Session currentSession = entityManager.unwrap(Session.class);
-        return currentSession.createQuery("FROM ComponentiAssemblato", ComponentiAssemblato.class).getResultList();
+        return currentSession.createQuery("FROM ProdottiAssemblato", ProdottiAssemblato.class).getResultList();
     }
 
-    public ComponentiAssemblato getComponentiAssemblatoById(Integer id) {
+    public ProdottiAssemblato getComponentiAssemblatoById(Integer id) {
         Session currentSession = entityManager.unwrap(Session.class);
-        ComponentiAssemblato ca = currentSession.find(ComponentiAssemblato.class, id);
+        ProdottiAssemblato ca = currentSession.find(ProdottiAssemblato.class, id);
         return ca;
     }
 
-    public void saveOrUpdateComponentiAssemblato(List<ComponentiAssemblato> componentiAssemblato) {
+    public void saveOrUpdateComponentiAssemblato(List<ProdottiAssemblato> prodottiAssemblatoes) {
         Session currentSession = entityManager.unwrap(Session.class);
 
-        for (ComponentiAssemblato ca : componentiAssemblato) {
+        for (ProdottiAssemblato ca : prodottiAssemblatoes) {
             currentSession.saveOrUpdate(ca);
         }
     }
 
-    public void deleteComponentiAssemblato(List<ComponentiAssemblato> componentiAssemblato) {
+    public void deleteComponentiAssemblato(List<ProdottiAssemblato> prodottiAssemblatoes) {
         Session currentSession = entityManager.unwrap(Session.class);
-        for (ComponentiAssemblato ca : componentiAssemblato) {
-            currentSession.delete(currentSession.find(ComponentiAssemblato.class, ca.getIdComponentiAssemblato()));
+        for (ProdottiAssemblato ca : prodottiAssemblatoes) {
+            currentSession.delete(currentSession.find(ProdottiAssemblato.class, ca.getIdComponentiAssemblato()));
         }
     }
 
     public void deleteComponentiAssemblatoById(Integer id) {
         Session currentSession = entityManager.unwrap(Session.class);
-        currentSession.delete(currentSession.find(ComponentiAssemblato.class, id));
+        currentSession.delete(currentSession.find(ProdottiAssemblato.class, id));
     }
 
 }

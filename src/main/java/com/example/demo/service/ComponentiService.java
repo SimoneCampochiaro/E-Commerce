@@ -2,7 +2,7 @@ package com.example.demo.service;
 
 
 import com.example.demo.dao.ComponentiDao;
-import com.example.demo.model.Componenti;
+import com.example.demo.model.Prodotti;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,20 +16,20 @@ public class ComponentiService {
     @Autowired
     private ComponentiDao componentiDao;
 
-    public List<Componenti> getComponenti(){
+    public List<Prodotti> getComponenti(){
         return componentiDao.getComponenti();
     }
 
-    public Componenti getComponentiById(Integer id){
+    public Prodotti getComponentiById(Integer id){
         return componentiDao.getComponentiById(id);
     }
 
-    public void saveOrUpdateComponenti(List<Componenti> componenti){
-        componentiDao.saveOrUpdateComponenti(componenti);
+    public void saveOrUpdateComponenti(List<Prodotti> prodotti){
+        componentiDao.saveOrUpdateComponenti(prodotti);
     }
 
-    public void deleteComponenti(List<Componenti> componenti){
-        componentiDao.deleteComponenti(componenti);
+    public void deleteComponenti(List<Prodotti> prodotti){
+        componentiDao.deleteComponenti(prodotti);
     }
 
     public void deleteComponentiById(Integer id){
