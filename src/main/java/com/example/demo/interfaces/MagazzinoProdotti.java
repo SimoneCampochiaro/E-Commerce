@@ -9,7 +9,10 @@ public interface MagazzinoProdotti {
 
     void addAssemblato(Assemblati assemblati, int quantita) throws Exception;
 
-    void
+    void deleteComponenti(Componenti componenti, int quantita) throws Exception;
 
+    void deleteAssemblati(Componenti componenti, int quantita) throws Exception;
+
+    double prezzoTotale();
 
 }
