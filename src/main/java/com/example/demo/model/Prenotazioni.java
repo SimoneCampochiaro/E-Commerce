@@ -10,7 +10,7 @@ import java.util.Calendar;
 @Table(name = "prenotazioni")
 @Data
 public class Prenotazioni {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_prenotazione")
     private Integer idPrenotazione;
 

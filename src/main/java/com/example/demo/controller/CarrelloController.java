@@ -16,27 +16,27 @@ public class CarrelloController {
 
     private CarrelloService carrelloService;
 
-    @GetMapping("api/get-carrello")
+    @GetMapping("/get-carrello")
     public List<Carrello> getCarrello(){
         return carrelloService.getCarrello();
     }
 
-    @GetMapping("api/get-carrello/{id}")
+    @GetMapping("/get-carrello/{id}")
     public Carrello getCarrelloById(@PathVariable("id") Integer id){
         return carrelloService.getCarrelloById(id);
     }
 
-    @PostMapping("api/save-carrello")
+    @PostMapping("/save-carrello")
     public void saveDipendenti(@RequestBody @NotNull List<Carrello> carrello){
         carrelloService.saveOrUpdateCarrello(carrello);
     }
 
-    @DeleteMapping("api/cancella-carrello")
+    @DeleteMapping("/cancella-carrello")
     public void deleteCarrello(@RequestBody @NotNull List<Carrello> carrello){
         carrelloService.deleteCarrello(carrello);
     }
 
-    @DeleteMapping("api/cancella-carrello/{id}")
+    @DeleteMapping("/cancella-carrello/{id}")
     public void deleteCarrelloById(@PathVariable("id") Integer id){
         carrelloService.deleteCarrelloById(id);
     }

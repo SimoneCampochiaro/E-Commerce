@@ -11,7 +11,7 @@ import javax.persistence.*;
 
 public class ComponentiAssemblato {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_componenti_assemblato")
     private Integer idComponentiAssemblato;
 

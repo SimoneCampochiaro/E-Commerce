@@ -16,27 +16,27 @@ public class AssemblatiController{
 
     private AssemblatiService assemblatiService;
 
-    @GetMapping("api/get-assemblati")
+    @GetMapping("/get-assemblati")
     public List<Assemblati> getAssemblati(){
         return assemblatiService.getAssemblati();
     }
 
-    @GetMapping("api/get-assemblati/{id}")
+    @GetMapping("/get-assemblati/{id}")
     public Assemblati getAssemblatiById(@PathVariable("id") Integer id){
         return assemblatiService.getAssemblatiById(id);
     }
 
-    @PostMapping("api/save-assemblati")
+    @PostMapping("/save-assemblati")
     public void saveAssemblati(@RequestBody @NotNull List<Assemblati> assemblati){
         assemblatiService.saveOrUpdateAssemblati(assemblati);
     }
 
-    @DeleteMapping("api/cancella-assemblati")
+    @DeleteMapping("/cancella-assemblati")
     public void deleteAssemblati(@RequestBody @NotNull List<Assemblati> assemblati){
         assemblatiService.deleteAssemblati(assemblati);
     }
 
-    @DeleteMapping("api/cancella-assemblati/{id}")
+    @DeleteMapping("/cancella-assemblati/{id}")
     public void deleteAssemblatiById(@PathVariable("id") Integer id){
         assemblatiService.deleteAssemblatiById(id);
     }
