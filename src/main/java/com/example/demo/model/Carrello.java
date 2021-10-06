@@ -19,9 +19,17 @@ public class Carrello {
     @Column(name = "data_di_vendita")
     private Date dataVendita;
 
+    @Column(name = "prezzo_di_vendita")
+    private Double prezzoDiVendita;
+
     @JoinColumn(name = "id_anagrafica_clienti")
     @ManyToOne
     @JsonIgnoreProperties("anagrafica_clienti")
     private Clienti clienti;
+
+    @JoinColumn(name = "id_compoente")
+    @ManyToOne
+    @JsonIgnoreProperties("componenti")
+    private Componenti componenti;
 
 }

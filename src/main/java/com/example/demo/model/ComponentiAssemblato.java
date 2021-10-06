@@ -17,9 +17,7 @@ public class ComponentiAssemblato {
 
 
 
-    @JoinColumn(name = "id_assemblato")
-    @ManyToOne
-    @JsonIgnoreProperties("assemblati")
+    @OneToOne(mappedBy = "componenti_assemblato")
     private Assemblati assemblati;
 
 

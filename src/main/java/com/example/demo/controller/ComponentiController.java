@@ -16,7 +16,7 @@ public class ComponentiController {
     private ComponentiService componentiService;
 
     @GetMapping("api/get-componente")
-    public List<Componenti> getFornitori() {
+    public List<Componenti> getComponenti() {
         return componentiService.getComponenti();
     }
 

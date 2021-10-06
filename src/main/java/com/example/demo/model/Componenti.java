@@ -37,12 +37,12 @@ public class Componenti {
 
     @JoinColumn(name = "id_anagrafica_fornitore")
     @ManyToOne
-    @JsonIgnoreProperties("anagrafica_fornitori")
+    @JsonIgnoreProperties("componenti_assemblato")
     private Fornitori fornitori;
 
     @JoinColumn(name = "id_assemblato")
     @ManyToOne
-    @JsonIgnoreProperties("assemblati")
+    @JsonIgnoreProperties("componenti_assemblato")
     private Assemblati assemblati;
 
 }

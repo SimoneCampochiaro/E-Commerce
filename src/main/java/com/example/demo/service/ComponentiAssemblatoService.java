@@ -13,7 +13,6 @@ import java.util.List;
 public class ComponentiAssemblatoService {
 
     @Autowired
-
     private ComponentiAssemblatoDao componentiAssemblatoDao;
 
     public List<ComponentiAssemblato> getComponentiAssemblato(){

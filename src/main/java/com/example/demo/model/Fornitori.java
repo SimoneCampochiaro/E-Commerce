@@ -2,6 +2,7 @@ package com.example.demo.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -37,4 +38,7 @@ public class Fornitori {
 
     @Column(name = "sito_web")
     private String sito_web;
+
+    @OneToMany(mappedBy = "fornitori")
+    List<Componenti> componenti;
 }

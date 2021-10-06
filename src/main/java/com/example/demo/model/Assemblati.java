@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,6 +22,16 @@ public class Assemblati {
     @Column(name = "descrizione")
     private String descrizione;
 
-    @OneToMany(mappedBy = "assemblati")
-    private List<ComponentiAssemblato> componentiAssemblato;
+    @Column(name = "prezzo_di_vendita")
+    private Double prezzoDiVendita;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_assemblato", referencedColumnName = "id_componenti_assemblato")
+    private ComponentiAssemblato componentiAssemblato;
+
+    @JoinColumn(name = "id_componenti")
+    @ManyToOne
+    @JsonIgnoreProperties("assemblati")
+    private Componenti componenti;
+
 }
