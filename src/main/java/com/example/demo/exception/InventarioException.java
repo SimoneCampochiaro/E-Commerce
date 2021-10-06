@@ -1,6 +1,6 @@
 package com.example.demo.exception;
 
-public class InventarioException extends Exception{.
+public class InventarioException extends Exception{
 
     private static final long serialVersionUID = 4L;
 
