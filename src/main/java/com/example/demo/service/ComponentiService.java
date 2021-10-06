@@ -5,7 +5,6 @@ import com.example.demo.dao.ComponentiDao;
 import com.example.demo.model.Componenti;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.w3c.dom.ls.LSException;
 
 import javax.transaction.Transactional;
 import java.util.List;

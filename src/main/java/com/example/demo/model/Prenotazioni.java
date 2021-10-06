@@ -5,10 +5,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Calendar;
-import java.sql.Timestamp;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
 
 @Entity
 @Table(name = "prenotazioni")

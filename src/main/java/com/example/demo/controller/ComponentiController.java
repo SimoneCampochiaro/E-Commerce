@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-
-import com.example.demo.model.Clienti;
 import com.example.demo.model.Componenti;
 import com.example.demo.service.ComponentiService;
 import com.sun.istack.NotNull;

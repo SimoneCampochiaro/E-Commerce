@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Carrello;
 import com.example.demo.model.Prenotazioni;
 import com.example.demo.service.PrenotazioniService;
 import com.sun.istack.NotNull;

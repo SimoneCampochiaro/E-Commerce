@@ -1,6 +1,5 @@
 package com.example.demo.dao;
 
-import com.example.demo.model.Carrello;
 import com.example.demo.model.Clienti;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
