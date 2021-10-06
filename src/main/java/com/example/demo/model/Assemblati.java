@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 
@@ -31,6 +32,7 @@ public class Assemblati {
     @JoinColumn(name = "id_componenti")
     @ManyToOne
     @JsonIgnoreProperties("assemblati")
+    @JsonIgnore
     private Prodotti prodotti;
 
 }

@@ -1,5 +1,6 @@
 package com.example.demo.model;
 import lombok.Data;
+import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -40,5 +41,6 @@ public class Fornitori {
     private String sito_web;
 
     @OneToMany(mappedBy = "fornitori")
+    @JsonIgnore
     List<Prodotti> prodotti;
 }

@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import lombok.Data;
+import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -41,7 +42,10 @@ public class Clienti {
     private String passwordCliente;
 
     @OneToMany(mappedBy = "clienti")
+    @JsonIgnore
     List<Carrello> carrello;
+
+
 
 
 }

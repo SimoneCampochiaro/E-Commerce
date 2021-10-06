@@ -30,6 +30,7 @@ public class Carrello {
     @JoinColumn(name = "id_componente")
     @ManyToOne
     @JsonIgnoreProperties("prodotti")
+
     private Prodotti prodotti;
 
 }
