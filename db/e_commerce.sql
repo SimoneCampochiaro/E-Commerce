@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Ott 06, 2021 alle 21:11
+-- Creato il: Ott 07, 2021 alle 10:11
 -- Versione del server: 10.4.20-MariaDB
 -- Versione PHP: 8.0.9
 
@@ -121,25 +121,6 @@ INSERT INTO `carrello` (`id_carrello`, `data_carrello`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `modalita_consegna`
---
-
-CREATE TABLE `modalita_consegna` (
-  `id_modalita_consegna` int(11) NOT NULL,
-  `descrizione_consegna` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dump dei dati per la tabella `modalita_consegna`
---
-
-INSERT INTO `modalita_consegna` (`id_modalita_consegna`, `descrizione_consegna`) VALUES
-(1, 'Ritiro in negozio'),
-(2, 'Spedizione');
-
--- --------------------------------------------------------
-
---
 -- Struttura della tabella `ordini`
 --
 
@@ -147,7 +128,6 @@ CREATE TABLE `ordini` (
   `id_ordine` int(11) NOT NULL,
   `id_carrello` int(11) DEFAULT NULL,
   `id_anagrafica_cliente` int(11) DEFAULT NULL,
-  `id_modalita_consegna` int(11) DEFAULT NULL,
   `importo` double DEFAULT NULL,
   `data_consegna` date DEFAULT NULL,
   `ora_consegna` time DEFAULT NULL
@@ -157,8 +137,8 @@ CREATE TABLE `ordini` (
 -- Dump dei dati per la tabella `ordini`
 --
 
-INSERT INTO `ordini` (`id_ordine`, `id_carrello`, `id_anagrafica_cliente`, `id_modalita_consegna`, `importo`, `data_consegna`, `ora_consegna`) VALUES
-(1, 2, 1, 1, 340, '2021-10-07', '15:13:49');
+INSERT INTO `ordini` (`id_ordine`, `id_carrello`, `id_anagrafica_cliente`, `importo`, `data_consegna`, `ora_consegna`) VALUES
+(1, 2, 1, 340, '2021-10-07', '15:13:49');
 
 -- --------------------------------------------------------
 
@@ -264,18 +244,11 @@ ALTER TABLE `carrello`
   ADD PRIMARY KEY (`id_carrello`);
 
 --
--- Indici per le tabelle `modalita_consegna`
---
-ALTER TABLE `modalita_consegna`
-  ADD PRIMARY KEY (`id_modalita_consegna`);
-
---
 -- Indici per le tabelle `ordini`
 --
 ALTER TABLE `ordini`
   ADD PRIMARY KEY (`id_ordine`),
   ADD KEY `id_anagrafica_clienti` (`id_anagrafica_cliente`),
-  ADD KEY `id_modalita_consegna` (`id_modalita_consegna`),
   ADD KEY `id_carrello` (`id_carrello`);
 
 --
@@ -331,12 +304,6 @@ ALTER TABLE `carrello`
   MODIFY `id_carrello` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT per la tabella `modalita_consegna`
---
-ALTER TABLE `modalita_consegna`
-  MODIFY `id_modalita_consegna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT per la tabella `ordini`
 --
 ALTER TABLE `ordini`
@@ -369,7 +336,6 @@ ALTER TABLE `prodotti_nel_carrello`
 --
 ALTER TABLE `ordini`
   ADD CONSTRAINT `id_anagrafica_clienti` FOREIGN KEY (`id_anagrafica_cliente`) REFERENCES `anagrafica_clienti` (`id_anagrafica_clienti`),
-  ADD CONSTRAINT `id_modalita_consegna` FOREIGN KEY (`id_modalita_consegna`) REFERENCES `modalita_consegna` (`id_modalita_consegna`),
   ADD CONSTRAINT `ordini_ibfk_1` FOREIGN KEY (`id_carrello`) REFERENCES `carrello` (`id_carrello`);
 
 --
