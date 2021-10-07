@@ -10,39 +10,39 @@ import javax.persistence.*;
 import java.util.List;
 
 @Repository
-public class ComponentiDao {
+public class ProdottiDao {
 
 
     @Autowired
     private EntityManager entityManager;
 
-    public List<Prodotti> getComponenti() {
+    public List<Prodotti> getProdotti() {
         Session currentSession = entityManager.unwrap(Session.class);
         return currentSession.createQuery("FROM Prodotti", Prodotti.class).getResultList();
     }
 
-    public Prodotti getComponentiById(Integer id) {
+    public Prodotti getProdottiById(Integer id) {
         Session currentSession = entityManager.unwrap(Session.class);
-        Prodotti c = currentSession.find(Prodotti.class, id);
-        return c;
+        Prodotti p = currentSession.find(Prodotti.class, id);
+        return p;
     }
 
-    public void saveOrUpdateComponenti(List<Prodotti> prodotti) {
+    public void saveOrUpdateProdotti(List<Prodotti> prodotti) {
         Session currentSession = entityManager.unwrap(Session.class);
 
-        for (Prodotti c : prodotti) {
-            currentSession.saveOrUpdate(c);
+        for (Prodotti p : prodotti) {
+            currentSession.saveOrUpdate(p);
         }
     }
 
-    public void deleteComponenti(List<Prodotti> prodotti) {
+    public void deleteProdotti(List<Prodotti> prodotti) {
         Session currentSession = entityManager.unwrap(Session.class);
-        for (Prodotti c : prodotti) {
-            currentSession.delete(currentSession.find(Prodotti.class, c.getIdComponente()));
+        for (Prodotti p : prodotti) {
+            currentSession.delete(currentSession.find(Prodotti.class, p.getIdProdotto()));
         }
     }
 
-    public void deleteComponentiById(Integer id) {
+    public void deleteProdottiById(Integer id) {
         Session currentSession = entityManager.unwrap(Session.class);
         currentSession.delete(currentSession.find(Prodotti.class, id));
     }

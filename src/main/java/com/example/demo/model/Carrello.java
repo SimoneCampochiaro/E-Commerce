@@ -1,10 +1,11 @@
 package com.example.demo.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "carrello")
@@ -16,21 +17,14 @@ public class Carrello {
     private Integer idCarrello;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "data_di_vendita")
-    private Date dataVendita;
+    @Column(name = "data_carrello")
+    private Date dataCarrello;
 
-    @Column(name = "prezzo_di_vendita")
-    private Double prezzoDiVendita;
+    @OneToMany(mappedBy = "carrello")
+    @JsonIgnore
+    private List<Ordini> ordini;
 
-    @JoinColumn(name = "id_anagrafica_clienti")
-    @ManyToOne
-    @JsonIgnoreProperties("anagrafica_clienti")
-    private Clienti clienti;
-
-    @JoinColumn(name = "id_componente")
-    @ManyToOne
-    @JsonIgnoreProperties("prodotti")
-
-    private Prodotti prodotti;
-
+    @OneToMany(mappedBy = "carrello")
+    @JsonIgnore
+    private List<ProdottiNelCarrello> prodottiNelCarrello;
 }

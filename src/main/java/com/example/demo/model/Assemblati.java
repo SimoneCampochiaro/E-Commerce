@@ -1,10 +1,12 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import net.minidev.json.annotate.JsonIgnore;
+
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "assemblati")
@@ -25,14 +27,13 @@ public class Assemblati {
     @Column(name = "prezzo_di_vendita")
     private Double prezzoDiVendita;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_assemblato", referencedColumnName = "id_componenti_assemblato")
-    private ProdottiAssemblato prodottiAssemblato;
-
-    @JoinColumn(name = "id_componenti")
-    @ManyToOne
-    @JsonIgnoreProperties("assemblati")
+    @OneToMany(mappedBy = "assemblati")
     @JsonIgnore
-    private Prodotti prodotti;
+    private List<ProdottiAssemblato> prodottiAssemblato;
+
+
+    @OneToMany(mappedBy = "assemblati")
+    @JsonIgnore
+    private List<Prodotti> prodotti;
 
 }

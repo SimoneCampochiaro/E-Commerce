@@ -1,6 +1,6 @@
 package com.example.demo.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;

@@ -1,7 +1,8 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -41,9 +42,10 @@ public class Clienti {
     @Column(name = "password_cliente")
     private String passwordCliente;
 
+
     @OneToMany(mappedBy = "clienti")
     @JsonIgnore
-    List<Carrello> carrello;
+    private List<Ordini> ordini;
 
 
 

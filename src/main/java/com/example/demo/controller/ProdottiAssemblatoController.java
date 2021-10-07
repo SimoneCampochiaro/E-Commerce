@@ -1,44 +1,45 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.ProdottiAssemblato;
-import com.example.demo.service.ComponentiAssemblatoService;
+import com.example.demo.service.ProdottiAssemblatoService;
 import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @CrossOrigin
 @RestController
 @RequestMapping
-public class ComponentiAssemblatoController {
+public class ProdottiAssemblatoController {
 
     @Autowired
 
-    private ComponentiAssemblatoService componentiAssemblatoService;
+    private ProdottiAssemblatoService prodottiAssemblatoService;
 
     @GetMapping("/get-componentiAssemblato")
     public List<ProdottiAssemblato> getComponentiAssemblato(){
-        return componentiAssemblatoService.getComponentiAssemblato();
+        return prodottiAssemblatoService.getComponentiAssemblato();
     }
 
     @GetMapping("/get-componentiAssemblato/{id}")
     public ProdottiAssemblato getComponentiAssemblatoById(@PathVariable("id") Integer id){
-        return componentiAssemblatoService.getComponentiAssemblatoById(id);
+        return prodottiAssemblatoService.getComponentiAssemblatoById(id);
     }
 
     @PostMapping("/save-componentiAssemblato")
     public void saveComponentiAssemblato(@RequestBody @NotNull List<ProdottiAssemblato> prodottiAssemblatoes){
-        componentiAssemblatoService.saveOrUpdateComponentiAssemblato(prodottiAssemblatoes);
+        prodottiAssemblatoService.saveOrUpdateComponentiAssemblato(prodottiAssemblatoes);
     }
 
     @DeleteMapping("/cancella-componentiAssemblato")
     public void deleteComponentiAssemblato(@RequestBody @NotNull List<ProdottiAssemblato> componentiAssemblati){
-        componentiAssemblatoService.deleteComponentiAssemblato(componentiAssemblati);
+        prodottiAssemblatoService.deleteComponentiAssemblato(componentiAssemblati);
     }
 
     @DeleteMapping("/cancella-componenteAssemblato/{id}")
     public void deleteComponentiAssemblatoById(@PathVariable("id") Integer id){
-        componentiAssemblatoService.deleteComponentiAssemblatoById(id);
+        prodottiAssemblatoService.deleteComponentiAssemblatoById(id);
     }
 
 }

@@ -16,10 +16,17 @@ public class ProdottiAssemblato {
     private Integer idComponentiAssemblato;
 
 
-    @JoinColumn(name = "id_componente")
+    @JoinColumn(name = "id_assemblato")
     @ManyToOne
-    @JsonIgnoreProperties("prodotti")
+    @JsonIgnoreProperties("prodotti_assemblato")
+    private Assemblati assemblati;
+
+
+    @JoinColumn(name = "id_prodotto")
+    @ManyToOne
+    @JsonIgnoreProperties("prodotti_assemblato")
     private Prodotti prodotti;
+
 
 
 }

@@ -11,7 +11,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Repository
-public class ComponentiAssemblatoDao {
+public class ProdottiAssemblatoDao {
 
     @Autowired
     private EntityManager entityManager;
