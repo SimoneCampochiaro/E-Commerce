@@ -5,6 +5,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+import java.sql.Time;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -17,19 +19,17 @@ public class Ordini {
     @Column(name = "id_ordine")
     private Integer idOrdine;
 
-    @Column(name = "id_modalita_consegna")
-    private Integer idModalitaConsegna;
 
     @Column(name = "importo")
-    private double importo;
+    private Double importo;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "data_consegna")
-    private Date dataConsegna;
+    private Calendar dataConsegna;
 
-    @Temporal(TemporalType.TIME)
+    @Temporal(TemporalType.DATE)
     @Column(name = "ora_consegna")
-    private Date oraConsegna;
+    private Calendar oraConsegna;
 
 
     @JoinColumn(name = "id_carrello")

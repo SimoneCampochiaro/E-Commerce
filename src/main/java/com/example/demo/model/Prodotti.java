@@ -39,12 +39,12 @@ public class Prodotti {
 
     @JoinColumn(name = "id_anagrafica_fornitore")
     @ManyToOne
-    @JsonIgnoreProperties("prodotti")
+    @JsonIgnore
     private Fornitori fornitori;
 
     @JoinColumn(name = "id_assemblato")
     @ManyToOne
-    @JsonIgnoreProperties("prodotti")
+    @JsonIgnore
     private Assemblati assemblati;
 
     @OneToMany(mappedBy = "prodotti")
