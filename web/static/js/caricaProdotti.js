@@ -34,10 +34,8 @@ function carica(id) {
             div.innerHTML=`<img src="${prodotto.linkImmagine}" >`
             let div1=productTemplate.querySelector('.product-name')
             div1.innerHTML=`${prodotto.componente}`
-            let div2=productTemplate.querySelector('.product-description')
-            div2.innerHTML=`${prodotto.descrizione}`
             let div3=productTemplate.querySelector('.product-price')
-            div3.innerHTML=`${prodotto.prezzoDiVendita}`
+            div3.innerHTML=`${prodotto.prezzoDiVendita + "&#8364"}`
             let div4=productTemplate.querySelector('.product-available')
             div4.innerHTML=`${prodotto.disponibilita}`
 
