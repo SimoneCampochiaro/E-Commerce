@@ -4,12 +4,12 @@ window.addEventListener("load", function (Event) {
     var mostra = urlParams.get('id')
     console.log(mostra);
     carica(mostra);
-    link.addEventListener("click", function (e) {
+  /*  link.addEventListener("click", function (e) {
         let urlApi = "http://localhost:63342/E-Commerce-Pc/demo/web/src/product.html";
         close();
         open(urlApi);
 
-    })
+    })*/
 })
 
 function carica(id) {
