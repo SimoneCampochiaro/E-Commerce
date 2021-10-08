@@ -5,7 +5,7 @@ window.addEventListener("load", function (Event) {
     console.log(mostra);
     carica(mostra);
     link.addEventListener("click", function (e) {
-        let urlApi = "http://localhost:63342/E-Commerce-Pc/demo/web/src/product.html?id=1";
+        let urlApi = "http://localhost:63342/E-Commerce-Pc/demo/web/src/product.html";
         close();
         open(urlApi);
 
