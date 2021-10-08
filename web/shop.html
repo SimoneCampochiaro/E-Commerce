@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assemblati</title>
+
+	<link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="static/css/header_shop.css">
+	<link rel="stylesheet" type="text/css" href="static/css/header.css">
+	<link rel="stylesheet" type="text/css" href="static/css/body_shop.css">
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+</head>
+<body>
+
+<header class="nav_principale d-flex flex-row justify-content-between col-12 col-md-12">
+
+				<div id="logo">
+					<a href="index.html"><img src="static/img/logo.png"></a>
+				</div>
+
+				<div class="search_bar">
+					<form>
+						<input type="search" aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					</form>
+				</div>
+
+				<div class="icon d-flex flex-row">
+					<div class="icon1">
+						<i class="fa fa-user fa-2x fa-fw" aria-hidden="true"></i>
+					</div>
+					
+					<div class="icon2"><i class="fa fa-shopping-cart fa-2x fa-fw" aria-hidden="true"></i></div>
+				</div>
+
+				
+				<div class="menu">	
+					<nav class="navbar">
+						<div class="hamburger-menu">
+							<div class="line line-1"></div>
+							<div class="line line-2"></div>
+							<div class="line line-3"></div>
+						</div>
+						
+						<ul class="nav-list">
+							<li class="nav-item">
+								<a href="index.html" class="nav-link">Home</a>
+							</li>
+							<li class="nav-item">
+								<a href="shop.html" class="nav-link">Shop</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link">Login</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+</header>
+
+<section class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="static/img/carosello1.jpeg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="static/img/carosello1.jpeg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="static/img/carosello1.jpeg" alt="New york" style="width:100%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<article class="shop_articles">
+
+	<div class="title">
+		<h1>Prodotti</h1>
+	</div>
+<!--Assemblati-->
+	<div class="container_assemblati d-flex flex-row justify-content-between">
+		<div class="immagine_prodotto product-immage">
+
+		</div>
+		<div class="info d-flex flex-row justify-content-between">
+			<ul class="info_prodotto">
+				<li class = "product-name"></li>
+				<li class = "product-description"></li>
+			</ul>
+		</div>
+
+		<div class="acquista-prodotto">
+			<p class="product-price"></p>
+			<button>Aggiungi al carrello</button>
+		</div>
+	</div>
+
+	<div class="products">
+
+	</div>
+</article>
+
+
+	<script src="static/js/caricaProdotti.js"></script>
+	<script src="static/js/header.js"></script>
+
+</body>
+</html>
