@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
   <title>Title</title>
   <script>
 
@@ -13,7 +13,7 @@
       console.log(mostra);
       carica(mostra);
       link.addEventListener("click", function (e) {
-        let urlApi = "http://localhost:63342/E-Commerce-Pc/demo/web/src/product.html?id=1";
+        let urlApi = "http://localhost:63342/E-Commerce-Pc/demo/web/src/prova.html";
         close();
         open(urlApi);
 
@@ -38,7 +38,7 @@
           let productTemplate = document.querySelector('.product').cloneNode(true);
           productTemplate.classList.remove('d-none')
           productTemplate.setAttribute("id", 'product-' + prodotto.idProdotto)
-          let div=productTemplate.querySelector(`.product-immage`)
+          let div=productTemplate.querySelector(`.product-image`)
           div.innerHTML=`<img src="${prodotto.linkImmagine}" >`
           let div1=productTemplate.querySelector('.product-name')
           div1.innerHTML=`${prodotto.componente}`
@@ -46,7 +46,8 @@
           div2.innerHTML=`${prodotto.descrizione}`
           let div3=productTemplate.querySelector('.product-price')
           div3.innerHTML=`${prodotto.prezzoDiVendita}`
-
+          let div4=productTemplate.querySelector('.product-available')
+          div4.innerHTML=`${prodotto.disponibilita}`
           document.querySelector('.products').appendChild(productTemplate)
 
         })
@@ -59,7 +60,7 @@
 </head>
 <body>
 <div class="product d-none">
-  <div class="product-immage">
+  <div class="product-image">
 
   </div>
   <div>
@@ -88,7 +89,16 @@
       Prezzo
     </label>
   </div>
-  <div  class="product-price">
+  <div class="product-price">
+
+  </div>
+
+  <div>
+    <label>
+      Disponibilità
+    </label>
+  </div>
+  <div class="product-available">
 
   </div>
 </div>

@@ -31,13 +31,13 @@ public class Prodotti {
     @Column(name = "quantita")
     private Integer quantita;
 
-   /* @Column(name = "disponibilita" , columnDefinition = "TINYINT")
+    @Column(name = "disponibilita" , columnDefinition = "TINYINT")
     @Type(type = "org.hibernate.type.NumericBooleanType")
     private Boolean disponibilita; // 0 = false 1 = true
-    */
 
+/*
     @Column(name="disponibilita")
-    private Boolean disponibilita;
+    private Boolean disponibilita;*/
 
     @Column(name="prezzo_di_acquisto")
     private Double prezzoDiAcquisto;
