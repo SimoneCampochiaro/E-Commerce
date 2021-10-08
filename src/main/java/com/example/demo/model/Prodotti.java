@@ -1,6 +1,7 @@
 package com.example.demo.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,6 +15,9 @@ public class Prodotti {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_prodotto")
     private Integer idProdotto;
+/*
+    @Column(name = "immagine")
+    private String linkImmagine;*/
 
     @Column(name = "componente")
     private String componente;
@@ -27,8 +31,9 @@ public class Prodotti {
     @Column(name = "quantita")
     private Integer quantita;
 
-    @Column(name = "disponibilita")
-    private Boolean disponibilita;
+    @Column(name = "disponibilita" , columnDefinition = "TINYINT")
+    @Type(type = "org.hibernate.type.NumericBooleanType")
+    private boolean disponibilita; // 0 = false 1 = true
 
     @Column(name="prezzo_di_acquisto")
     private Double prezzoDiAcquisto;
