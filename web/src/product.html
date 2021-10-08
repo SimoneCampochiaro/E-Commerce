@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        window.addEventListener("load", function (Event) {
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var mostra = urlParams.get('id')
+            console.log(mostra);
+            carica(mostra);
+            link.addEventListener("click", function (e) {
+                let urlApi = "http://localhost:63342/E-Commerce-Pc/demo/web/src/product.html?id=1";
+                close();
+                open(urlApi);
+
+            })
+        })
+
+        function carica(id) {
+           let urlApi = "http://localhost:8080/api/get-prodotti/2"
+
+            //console.log(id)
+            console.log(urlApi)
+            fetch(urlApi,
+                {
+                    method: "GET"
+                }).then(function (response) {
+                console.log(response)
+                return response.json()
+            }).then(function (data) {
+
+                console.log(data)
+
+                let div1=document.querySelector('#componente')
+                div1.innerHTML=`${data.componente}`
+                let div2=document.querySelector('#descrizione')
+                div2.innerHTML=`${data.descrizione}`
+                let div3=document.querySelector('#prezzo')
+                div3.innerHTML=`${data.prezzoDiVendita}`
+            })
+        }
+
+    </script>
+</head>
+<body>
+
+    <div>
+        <label>
+            Componente
+        </label>
+    </div>
+    <div id="componente">
+
+    </div>
+
+
+    <div >
+        <label>
+            Descrizione
+        </label>
+    </div>
+    <div id="descrizione">
+
+    </div>
+
+
+
+    <div>
+        <label>
+            Prezzo
+        </label>
+    </div>
+    <div id="prezzo">
+
+    </div>
+</body>
+</html>

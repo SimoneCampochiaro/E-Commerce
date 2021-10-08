@@ -6,8 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Project starter</title>
     <link rel="stylesheet" type="text/css" href="dist/css/styles.css" />
+    <script>
+      const Http = new XMLHttpRequest();
+      const url='http://localhost:8080/api/get-prodotti';
+      Http.open("GET", url);
+      Http.send();
+
+      Http.onreadystatechange = (e) => {
+        document.write(Http.responseText)
+      }
+
+    </script>
   </head>
   <body>
-    <h1>Hello world!</h1>
+    <h1>Prodotti</h1>
   </body>
 </html>

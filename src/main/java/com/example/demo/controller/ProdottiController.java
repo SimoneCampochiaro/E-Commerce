@@ -6,21 +6,31 @@ import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
-@CrossOrigin
+@CrossOrigin //url localhost??
 @RestController
-@RequestMapping
+@RequestMapping//("/product") //usare jsv?
 public class ProdottiController {
 
     @Autowired
     private ProdottiService prodottiService;
-
     @GetMapping("/get-prodotti")
     public List<Prodotti> getProdotti() {
         return prodottiService.getProdotti();
     }
+/*
+    public Map<Integer, Prodotti> convertList(List<Prodotti> list) {
+        Map<Integer, Prodotti> map = list.stream().collect(Collectors.toMap(Prodotti::getIdProdotto,
+                Function.identity()));
+        return map;
+    }
 
+*/
     @GetMapping("/get-prodotti/{id}")
     public Prodotti getProdottiById(@PathVariable("id") Integer id){
         return prodottiService.getProdottiById(id);
