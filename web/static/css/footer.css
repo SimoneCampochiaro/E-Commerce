@@ -1,0 +1,22 @@
+.social_flex
+{
+background: rgb(84,84,84);
+background: linear-gradient(0deg, rgba(84,84,84,1) 0%, rgba(106,106,109,1) 7%, rgba(141,141,148,1) 14%, rgba(179,184,185,1) 26%, rgba(209,214,215,1) 40%, rgba(228,232,233,1) 53%, rgba(253,255,255,1) 65%);
+}
+
+.ul_list
+{
+	list-style: none;
+	padding-top: 20px;
+}
+
+.ul_list li
+{
+	padding-right: 75px;
+}
+
+.ul_list img 
+{
+	width: 50px;
+	height: 50px;
+}
