@@ -8,7 +8,7 @@ window.addEventListener("load", function (Event) {
         let urlApi = "http://localhost:63342/E-Commerce/demo/web/shop.html";
         close();
         open(urlApi);
-
+fdsfsf
     })*/
 })
 
