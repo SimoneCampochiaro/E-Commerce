@@ -30,7 +30,7 @@ function carica(id) {
             let productTemplate = document.querySelector('.product').cloneNode(true);
             productTemplate.classList.remove('d-none')
             productTemplate.setAttribute("id", 'product-' + prodotto.idProdotto)
-            let div=productTemplate.querySelector(`.product-immage`)
+            let div=productTemplate.querySelector(`.product-image`)
             div.innerHTML=`<img src="${prodotto.linkImmagine}" >`
             let div1=productTemplate.querySelector('.product-name')
             div1.innerHTML=`${prodotto.componente}`
@@ -38,6 +38,8 @@ function carica(id) {
             div2.innerHTML=`${prodotto.descrizione}`
             let div3=productTemplate.querySelector('.product-price')
             div3.innerHTML=`${prodotto.prezzoDiVendita}`
+            let div4=productTemplate.querySelector('.product-available')
+            div4.innerHTML=`${prodotto.disponibilita}`
 
             document.querySelector('.products').appendChild(productTemplate)
 
