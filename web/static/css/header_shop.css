@@ -186,3 +186,9 @@ header
 {
 	transform: scaleX(1);
 }
+
+
+input
+{
+	padding: 0 20px;
+}
