@@ -5,7 +5,7 @@ window.addEventListener("load",function()
     {
         var cerca = this.value.toLowerCase();
 
-        var all = documents.querySelectorAll(".products");
+        var all = document.querySelectorAll(".product");
 
         for(let i of all)
         {
