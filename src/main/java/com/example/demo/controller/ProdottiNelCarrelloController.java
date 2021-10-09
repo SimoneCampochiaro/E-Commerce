@@ -18,27 +18,27 @@ public class ProdottiNelCarrelloController {
     private ProdottiNelCarrelloService prodottiNelCarrelloService;
 
     @GetMapping("/get-prodotti-carrello")
-    public List<ProdottiNelCarrello> g(){
+    public List<ProdottiNelCarrello> getProdottiNelCarrello(){
         return prodottiNelCarrelloService.getProdottiNelCarrello();
     }
 
-    @GetMapping("/get-prenotazione-carrello/{id}")
-    public ProdottiNelCarrello getPrenotazioniById(@PathVariable("id") Integer id){
+    @GetMapping("/get-prodotti-carrello/{id}")
+    public ProdottiNelCarrello getProdottiNelCarrelloById(@PathVariable("id") Integer id){
         return prodottiNelCarrelloService.getProdottiNelCarrelloById(id);
     }
 
     @PostMapping("/save-prodotti-carrello")
-    public void savePrenotazione(@RequestBody @NotNull List<ProdottiNelCarrello> prodottiNelCarrello){
+    public void saveProdottiNelCarrello(@RequestBody @NotNull List<ProdottiNelCarrello> prodottiNelCarrello){
         prodottiNelCarrelloService.saveOrUpdateProdottiNelCarrello(prodottiNelCarrello);
     }
 
     @DeleteMapping("/cancella-prodotti-carrello")
-    public void deletePrenotazioni(@RequestBody @NotNull List<ProdottiNelCarrello> prodottiNelCarrello){
+    public void deleteProdottiNelCarrello(@RequestBody @NotNull List<ProdottiNelCarrello> prodottiNelCarrello){
         prodottiNelCarrelloService.deleteProdottiNelCarrello(prodottiNelCarrello);
     }
 
     @DeleteMapping("/cancella-prodotti-carrello/{id}")
-    public void deletePrenotazioniById(@PathVariable("id") Integer id){
+    public void deleteProdottiNelCarrelloById(@PathVariable("id") Integer id){
         prodottiNelCarrelloService.deleteProdottiNelCarrelloById(id);
     }
 
