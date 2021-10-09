@@ -31,7 +31,7 @@ function carica(id) {
             let div3=productTemplate.querySelector('.product-price')
             div3.innerHTML=`${prodotto.prezzoDiVendita + "&#8364"}`
             let div4=productTemplate.querySelector('.product-available')
-            div4.innerHTML=`${prodotto.disponibilita}`
+            div4.innerHTML=`${prodotto.quantita}`
 
             document.querySelector('.products').appendChild(productTemplate)
 
