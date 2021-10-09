@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -16,9 +17,9 @@ public class Carrello {
     @Column(name = "id_carrello")
     private Integer idCarrello;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "data_carrello")
-    private Date dataCarrello;
+    private Calendar dataCarrello;
 
     @OneToMany(mappedBy = "carrello")
     @JsonIgnore
