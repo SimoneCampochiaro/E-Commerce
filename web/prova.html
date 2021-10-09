@@ -45,7 +45,7 @@
           let div2=productTemplate.querySelector('.product-description')
           div2.innerHTML=`${prodotto.descrizione}`
           let div3=productTemplate.querySelector('.product-price')
-          div3.innerHTML=`${prodotto.prezzoDiVendita}`
+          div3.innerHTML=`${prodotto.prezzoDiVendita + "€"}`
           let div4=productTemplate.querySelector('.product-available')
           div4.innerHTML=`${prodotto.disponibilita}`
           document.querySelector('.products').appendChild(productTemplate)
