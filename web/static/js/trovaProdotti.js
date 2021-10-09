@@ -1,5 +1,6 @@
 window.addEventListener("load",function()
 {
+    //https://code-boxx.com/filter-search-list-in-javascript/
     document.getElementById("search").addEventListener("keyup",function()
     {
         var cerca = this.value.toLowerCase();
