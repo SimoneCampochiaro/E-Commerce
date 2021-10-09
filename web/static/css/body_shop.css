@@ -69,6 +69,12 @@ article h1
 	width: 150px;
 }
 
+.info
+{
+	width: 200px;
+	margin-right: 200px;
+}
+
 .info_prodotto
 {
 	font-family: sans-serif;
@@ -76,7 +82,15 @@ article h1
 	font-weight: bold;
 	padding-top: 8px;
 	list-style: none;
+	width: 200px;
 }
+
+.info_prodotto label
+{
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
 
 .acquista_prodotto
 {
@@ -107,7 +121,7 @@ article h1
 .product_info
 {
 	font-family: sans-serif;
-	font-size: 14px;
+	font-size: 17px;
 }
 
 .prezzo
