@@ -9,7 +9,6 @@ window.addEventListener("load", function (Event) {
 function carica(id) {
     let urlApi = "http://localhost:8080/api/get-prodotti/"
 
-    //console.log(id)
     console.log(urlApi)
     fetch(urlApi,
         {
@@ -19,7 +18,7 @@ function carica(id) {
         return response.json()
     }).then(function (data) {
 
-        console.log(data)
+        console.log(data) //Cancellare dopo aver fatto la post request
         data.forEach(prodotto=>{
             let productTemplate = document.querySelector('.product').cloneNode(true);
             productTemplate.classList.remove('d-none')
@@ -32,10 +31,10 @@ function carica(id) {
                            `
             let div1=productTemplate.querySelector('.product-name')
             div1.innerHTML=`${prodotto.componente}`
-            let div3=productTemplate.querySelector('.product-price')
-            div3.innerHTML=`${prodotto.prezzoDiVendita + "&#8364"}`
-            let div4=productTemplate.querySelector('.product-quantity')
-            div4.innerHTML=`${prodotto.quantita}`
+            let div2=productTemplate.querySelector('.product-price')
+            div2.innerHTML=`${prodotto.prezzoDiVendita + "&#8364"}`
+            let div3=productTemplate.querySelector('.product-quantity')
+            div3.innerHTML=`${prodotto.quantita}`
 
             document.querySelector('.products').appendChild(productTemplate)
 

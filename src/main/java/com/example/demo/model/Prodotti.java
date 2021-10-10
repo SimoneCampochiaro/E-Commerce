@@ -34,7 +34,6 @@ public class Prodotti {
     @Column(name = "disponibilita" , columnDefinition = "TINYINT")
     @Type(type = "org.hibernate.type.NumericBooleanType")
     private Boolean disponibilita; // 0 = false 1 = true
-
 /*
     @Column(name="disponibilita")
     private Boolean disponibilita;*/
