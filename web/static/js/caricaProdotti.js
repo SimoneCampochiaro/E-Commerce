@@ -25,7 +25,15 @@ function carica(id) {
             productTemplate.classList.remove('d-none')
             productTemplate.setAttribute("id", 'product-' + prodotto.idProdotto)
             let div=productTemplate.querySelector(`.product-image`)
-            div.innerHTML=`<img src="${prodotto.linkImmagine}" >`
+            div.innerHTML=`<a href="dettagli.html" target="_blank">
+                           <img id="${prodotto.idProdotto}" class="thumbnail" src="${prodotto.linkImmagine}"></a>
+                            <script>
+                                $(document).ready(function() {
+                                    $('img.thumbnail').click(function() {
+                                        window.location.href = this.id + '.html' + '\';
+                                    });
+                                });
+                            </script>`
             let div1=productTemplate.querySelector('.product-name')
             div1.innerHTML=`${prodotto.componente}`
             let div3=productTemplate.querySelector('.product-price')
