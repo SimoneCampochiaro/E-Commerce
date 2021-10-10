@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dettagli</title>
+
+    <link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="static/css/header_shop.css">
+    <link rel="stylesheet" type="text/css" href="static/css/body_dettagli.css">
+
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+</head>
+<body>
+
+<header class="nav_principale d-flex flex-row justify-content-between col-12 col-md-12">
+
+    <div id="logo">
+        <a href="index.html"><img src="static/img/logo.png"></a>
+    </div>
+
+    <div class="search_bar">
+        <form>
+            <input id = "search" type="text" placeholder="Type to search...">
+        </form>
+    </div>
+
+    <div class="icon d-flex flex-row">
+        <div class="icon1">
+            <i class="fa fa-user fa-2x fa-fw" aria-hidden="true"></i>
+        </div>
+
+        <div class="icon2"><i class="fa fa-shopping-cart fa-2x fa-fw" aria-hidden="true"></i></div>
+    </div>
+
+
+    <div class="menu">
+        <nav class="navbar">
+            <div class="hamburger-menu">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+            </div>
+
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="shop.html" class="nav-link">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<div class="container_dettagli d-flex flex-column justify-content-between align-items-center">
+
+    <div class = "info_dettagli d-flex flex-row justify-content-between align-items-start">
+        <div class = "img_dettagli">
+            <img src="#" alt="immagine">
+        </div>
+        <div>
+            <h4>Nome</h4>
+        </div>
+        <div>
+            <h4>Codice IAN</h4>
+        </div>
+
+        <div>
+            <h4>Quantità</h4>
+        </div>
+
+        <div>
+            <h4>Fornitore</h4>
+        </div>
+    </div>
+
+    <div class = "descrizione_dettagli d-flex flex-column justify-content-start align-items-start">
+        <div>
+            <h4>Descrizione</h4>
+        </div>
+
+        <div>
+            <p>Lorem Ipsum</p>
+        </div>
+    </div>
+
+    <div class = "pagamento_dettagli d-flex flex-column justify-content-end align-items-end">
+        <div>
+            <h3>Prezzo</h3>
+        </div>
+        <div>
+            <button>Ordina</button>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="static/js/header.js"></script>
+</body>
+</html>
