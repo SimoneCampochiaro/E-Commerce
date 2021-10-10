@@ -22,7 +22,7 @@ function carica(q) {
             let productTemplate = document.querySelector('.prodotto');
             productTemplate.setAttribute("id", 'prodotto' + data.idProdotto)
             let div=productTemplate.querySelector(`.prodotto-img_dettagli`)
-            div.innerHTML=`<img id="${data.idProdotto}" src="${data.linkImmagine}">`
+            div.innerHTML=`<img id="${data.idProdotto}" class="img_dettagli" src="${data.linkImmagine}">`
             let div1=productTemplate.querySelector('.prodotto-nome')
             div1.innerHTML=`${data.componente}`
             let div3=productTemplate.querySelector('.prodotto-prezzo')
