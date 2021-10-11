@@ -26,7 +26,7 @@ function carica(id) {
             let div=productTemplate.querySelector(`.product-image`)
             let redirect = "dettagli.html?q=" +prodotto.idProdotto
             div.innerHTML=`<a target="_blank" href="${redirect}">
-                           <img id="${prodotto.idProdotto}"class="product-image" src="${prodotto.linkImmagine}">
+                           <img id="${prodotto.idProdotto}"class="product-image" value="${prodotto.linkImmagine}" src="${prodotto.linkImmagine}">
                            </a>
                            `
             let div1=productTemplate.querySelector('.product-name')
@@ -35,6 +35,9 @@ function carica(id) {
             div2.innerHTML=`${prodotto.prezzoDiVendita + "&#8364"}`
             let div3=productTemplate.querySelector('.product-quantity')
             div3.innerHTML=`${prodotto.quantita}`
+            let div4=productTemplate.querySelector('.product-button')
+            div4.innerHTML='<button class="add-to-cart" id="${prodotto.idProdotto}">Aggiungi al carrello</button>'
+
 
             document.querySelector('.products').appendChild(productTemplate)
 
