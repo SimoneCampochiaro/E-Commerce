@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <!-- Bootstrap v.5.0 -->
+  <link href="bootstrap-5.0.2-dist%20copia/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Login Style connection -->
+  <link href="CSS/provaloginregi.css" rel="stylesheet" />
+
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="hamburger-menu">
+    <div class="line line-1"></div>
+    <div class="line line-2"></div>
+    <div class="line line-3"></div>
+  </div>
+
+  <ul class="nav-list">
+    <li class="nav-item">
+      <a href="#" class="nav-link">Home</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link">Assemblati</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link">Componenti</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link">Login</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="form-container">
+  <div class="toggle-container">
+    <p>Sign up</p>
+    <div class="toggle-form">
+      <div class="toggle-inner"></div>
+    </div>
+    <p>Login</p>
+  </div>
+  <div class="form-section">
+    <div class="form-control">
+      <form action="/" id="login">
+        <h1 class="titoloForm"><strong>Login</strong></h1>
+        <div hidden class="form-cr">
+          <input type="text" placeholder="Username" spellcheck="true" required="">
+        </div>
+        <div class="form-cr">
+          <input type="email" placeholder="Email Address" spellcheck="false" required="">
+        </div>
+        <div class="form-cr">
+          <input type="password" placeholder="Password" spellcheck="true" required="">
+        </div>
+        <div hidden class="form-cr">
+          <input type="password" placeholder="Repeat Password" spellcheck="true" required="">
+        </div>
+        <div class="form-cr accept"> </div>
+
+        <div class="form-cr">
+          <button type="submit">Sign in</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-control">
+      <form action="/" id="signup">
+        <h1 class="titoloForm"><strong>Create Account</strong></h1>
+        <div class="form-cr">
+          <input type="text" placeholder="Username" spellcheck="true" required="">
+        </div>
+        <div class="form-cr">
+          <input type="email" placeholder="Email Address" spellcheck="false" required="">
+        </div>
+        <div class="form-cr">
+          <input type="password" placeholder="Password" id="respwd" spellcheck="true" required="">
+        </div>
+        <div class="form-cr">
+          <input type="password" placeholder="Repeat Password" spellcheck="true" name="confpsw" onChange="checkResPwd(this.value)" required="">
+        </div>
+        <div class="form-cr accept">
+
+        </div>
+
+        <div class="form-cr">
+          <button type="submit">Create Account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script src="JS/provaloginregis.js"></script>
+</body>
+</html>
