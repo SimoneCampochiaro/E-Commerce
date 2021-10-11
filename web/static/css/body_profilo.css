@@ -1,0 +1,19 @@
+header
+{
+    margin-bottom: 40px;
+}
+.container_profilo
+{
+    border-radius: 20px;
+    margin: 0 auto;
+    width: 80vw;
+    height: 80vh;
+    background-color: white;
+    box-shadow: 6px 6px 24px #FF0075;
+}
+
+.campo
+{
+    padding-top: 20px;
+    padding-right: 200px;
+}
