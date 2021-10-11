@@ -23,6 +23,7 @@ cartModalOverlay.addEventListener('click', (e) => {
         cartModalOverlay.style.transform = 'translateX(-200%)'
     }
 })
+
 // end of close cart modal
 
 // add products to cart

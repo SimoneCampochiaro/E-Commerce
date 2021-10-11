@@ -26,7 +26,7 @@ function carica(id) {
             let div=productTemplate.querySelector(`.product-image`)
             let redirect = "dettagli.html?q=" +prodotto.idProdotto
             div.innerHTML=`<a target="_blank" href="${redirect}">
-                           <img id="${prodotto.idProdotto}" src="${prodotto.linkImmagine}">
+                           <img id="${prodotto.idProdotto}"class="product-image" src="${prodotto.linkImmagine}">
                            </a>
                            `
             let div1=productTemplate.querySelector('.product-name')

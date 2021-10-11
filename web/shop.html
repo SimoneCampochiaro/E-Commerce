@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" type="text/css" href="static/css/header_shop.css">
     <link rel="stylesheet" type="text/css" href="static/css/body_shop.css">
+    <link rel="stylesheet" type="text/css" href="static/css/popup.css">
 
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -37,7 +38,28 @@
             <i class="fa fa-user fa-2x fa-fw" aria-hidden="true"></i>
         </div>
 
-        <div class="icon2"><i class="fa fa-shopping-cart fa-2x fa-fw" aria-hidden="true"></i></div>
+
+    </div>
+
+    <!--  cart modal  -->
+    <div class="cart-modal-overlay">
+        <div class="cart-modal">
+            <i id="close-btn" class="fas fa-times"></i>
+            <h1 class="cart-is-empty">Cart is empty</h1>
+
+            <div class="product-rows">
+            </div>
+            <div class="total">
+                <h1 class="cart-total">TOTAL</h1>
+                <span class="total-price">$0</span>
+                <button class="purchase-btn">PURCHASE</button>
+            </div>
+        </div>
+    </div>
+    <!--   end of cart modal -->
+    <div class="cart-btn">
+        <div class="icon2"><i id = "cart" class="fa fa-shopping-cart fa-2x fa-fw" aria-hidden="true"></i></div>
+        <span class ="cart-quantity">0</span>
     </div>
 
 
@@ -138,7 +160,7 @@
                 </div>
             </div>
 
-            <button>Aggiungi al carrello</button>
+            <button class="add-to-cart">Aggiungi al carrello</button>
         </div>
     </div>
 
@@ -150,6 +172,7 @@
 <script src="static/js/caricaProdotti.js"></script>
 <script src="static/js/header.js"></script>
 <script src="static/js/trovaProdotti.js"></script>
+<script src="static/js/popup.js"></script>
 
 
 </body>
