@@ -1,7 +1,10 @@
 package com.example.demo.dao;
 
 
+import com.example.demo.model.Carrello;
+import com.example.demo.model.Clienti;
 import com.example.demo.model.Ordini;
+import com.example.demo.model.ProdottiNelCarrello;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,6 +22,13 @@ public class OrdiniDao {
         Session currentSession = entityManager.unwrap(Session.class);
         return currentSession.createQuery("FROM Ordini", Ordini.class).getResultList();
     }
+
+    public List<Ordini> getOrdiniWhere() {
+        Session currentSession = entityManager.unwrap(Session.class);
+        return currentSession.createQuery("SELECT o FROM Prodotti AS p INNER JOIN ProdottiNelCarrello AS pc ON p.idProdotto = pc.idProdottoNelCarrello INNER JOIN Carrello AS c ON pc.idProdottoNelCarrello = c.idCarrello INNER JOIN Ordini AS o ON c.idCarrello = o.carrello.idCarrello INNER JOIN Clienti AS ac ON o.clienti.idCliente = ac.idCliente WHERE ac.idCliente = 2 ", Ordini.class).getResultList();
+    }
+
+
 
     public Ordini getOrdiniById(Integer id) {
         Session currentSession = entityManager.unwrap(Session.class);

@@ -40,50 +40,46 @@ function carica(id) {
             div4.querySelector("button").addEventListener("click",function (e){
                 let idProdottoCarrello= (e.currentTarget.id)
                 console.log("Ho cliccato" )
-                addToCartClicked(e, idProdottoCarrello);
-
+                //addToCartClicked(e, idProdottoCarrello, div1.innerHTML, div2.innerHTML);
+                addItemToCart(idProdottoCarrello, div1.innerHTML, div2.innerHTML);
             })
             document.querySelector('.products').appendChild(productTemplate)
 
         })
 
-        function addToCartClicked (e, id) {
-            button = e.target;
-            let productTemplate = document.querySelector('.prodotto');
-            productTemplate.setAttribute( )
-            let div=productTemplate.querySelector(`.prodotto-img_dettagli`)
-            div.innerHTML=`<img id="${data.idProdotto}" class="img_dettagli" src="${data.linkImmagine}">`
-            let div1=productTemplate.querySelector('.prodotto-nome')
-            div1.innerHTML=`${data.componente}`
-            let div2=productTemplate.querySelector('.prodotto-prezzo')
-            div2.innerHTML=`${data.prezzoDiVendita + "&#8364"}`
 
-            //addItemToCart (price, imageSrc);
-            console.log(div1.innerHTML)
-            //updateCartPrice()
+
+        function addItemToCart (id, name, price) {
+            var productRow = document.createElement('div');
+            productRow.classList.add('product-row');
+            productRow.classList.add('row');
+            productRow.setAttribute('id','product-row-'+id)
+            var productCartName= document.createElement('div');
+            productCartName.classList.add('cart-name');
+            productCartName.classList.add('col-6');
+            productCartName.innerHTML=`<div class="name">${name}</div>`
+            var productCartPrice= document.createElement('div')
+            productCartPrice.classList.add('cart-price')
+            productCartPrice.classList.add('col-3')
+            productCartPrice.innerHTML=`<div class="price">${price}</div>`
+            var quantita= document.createElement('div')
+            quantita.classList.add('cart-number')
+            quantita.classList.add('col-3')
+            quantita.innerHTML=`1`
+            productRow.appendChild(productCartName)
+            productRow.appendChild(productCartPrice)
+            productRow.appendChild(quantita)
+            let cartTemplate = document.querySelector('.product-rows')
+            cartTemplate.appendChild(productRow)
+            console.log(cartTemplate)
+
+
         }
+
+
 
 
     })
 }
 
-function aggiungiAlCarrello(id){
 
-
-
-   /*function addItemToCart (price, imageSrc) {
-        var productRow = document.createElement('div');
-        productRow.classList.add('product-row');
-        var productRows = document.getElementsByClassName('product-rows')[0];
-        var cartImage = document.getElementsByClassName('cart-image');
-
-        for (var i = 0; i < cartImage.length; i++) {
-            if (cartImage[i].src == imageSrc) {
-                alert('This item has already been added to the cart')
-                return;
-            }
-        }
-    }
-
-    */
-}

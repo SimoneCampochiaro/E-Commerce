@@ -35,4 +35,6 @@ public class OrdiniService {
     public void deleteOrdiniById(Integer id){
         ordiniDao.deleteAOrdiniById(id);
     }
+
+    public List<Ordini> getOrdiniWhere(){ return ordiniDao.getOrdiniWhere();}
 }

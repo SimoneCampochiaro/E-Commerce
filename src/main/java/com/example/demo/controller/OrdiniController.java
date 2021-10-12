@@ -28,6 +28,11 @@ public class OrdiniController {
         return ordiniService.getOrdiniById(id);
     }
 
+    @GetMapping("/get-ordine-where")
+    public List<Ordini> getOrdiniWhere(){
+        return ordiniService.getOrdiniWhere();
+    }
+
     @PostMapping("/save-ordine")
     public void saveOrdini(@RequestBody @NotNull List<Ordini> ordini){
         ordiniService.saveOrUpdateOrdini(ordini);
@@ -42,5 +47,7 @@ public class OrdiniController {
     public void deleteOrdiniById(@PathVariable("id") Integer id){
         ordiniService.deleteOrdiniById(id);
     }
+
+
 
 }

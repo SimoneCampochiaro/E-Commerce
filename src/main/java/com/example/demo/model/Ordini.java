@@ -6,6 +6,7 @@ import lombok.Data;
 import javax.persistence.*;
 
 import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 @Table(name = "ordini")
@@ -20,13 +21,13 @@ public class Ordini {
     @Column(name = "importo")
     private Double importo;
 
-    @Temporal(TemporalType.DATE)
-    @Column(name = "data_consegna")
-    private Calendar dataConsegna;
 
-    @Temporal(TemporalType.DATE)
+    @Column(name = "data_consegna")
+    private Date dataConsegna;
+
+
     @Column(name = "ora_consegna")
-    private Calendar oraConsegna;
+    private Date oraConsegna;
 
 
     @JoinColumn(name = "id_carrello1")
