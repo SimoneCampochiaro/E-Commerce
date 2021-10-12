@@ -17,13 +17,13 @@ public class ProdottiAssemblato {
 
 
     @JoinColumn(name = "id_assemblato1")
-    @ManyToOne
+    @ManyToOne(cascade ={CascadeType.ALL})
     @JsonIgnoreProperties("prodotti_assemblato")
     private Assemblati assemblati;
 
 
     @JoinColumn(name = "id_prodotto")
-    @ManyToOne
+    @ManyToOne(cascade ={CascadeType.ALL})
     @JsonIgnoreProperties("prodotti_assemblato")
     private Prodotti prodotti;
 

@@ -45,12 +45,12 @@ public class Prodotti {
     private Double prezzoDiVendita;
 
     @JoinColumn(name = "id_anagrafica_fornitore")
-    @ManyToOne
+    @ManyToOne(cascade ={CascadeType.ALL})
     @JsonIgnore
     private Fornitori fornitori;
 
     @JoinColumn(name = "id_assemblato")
-    @ManyToOne
+    @ManyToOne(cascade ={CascadeType.ALL})
     @JsonIgnore
     private Assemblati assemblati;
 

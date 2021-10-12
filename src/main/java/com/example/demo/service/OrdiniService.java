@@ -24,7 +24,7 @@ public class OrdiniService {
         return ordiniDao.getOrdiniById(id);
     }
 
-    public void saveOrUpdateOrdini(List<Ordini> ordini){
+    public void saveOrUpdateOrdini(Ordini ordini){
         ordiniDao.saveOrUpdateOrdini(ordini);
     }
 

@@ -15,18 +15,14 @@ public class ProdottiNelCarrello {
     @Column(name = "id_prodotto_nel_carrello")
     private Integer idProdottoNelCarrello;
 
-    @JoinColumn(name = "id_anagrafica_clienti")
-    @ManyToOne
-    @JsonIgnoreProperties("anagrafica_clienti")
-    private Clienti clienti;
 
     @JoinColumn(name = "id_carrello")
-    @ManyToOne
+    @ManyToOne(cascade ={CascadeType.ALL})
     @JsonIgnoreProperties("carrello")
     private Carrello carrello;
 
     @JoinColumn(name = "id_prodotto1")
-    @ManyToOne
+    @ManyToOne(cascade ={CascadeType.ALL})
     @JsonIgnore
     private Prodotti prodotti;
 }

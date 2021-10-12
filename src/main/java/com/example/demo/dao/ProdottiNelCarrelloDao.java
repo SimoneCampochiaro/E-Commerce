@@ -24,12 +24,11 @@ public class ProdottiNelCarrelloDao {
         return p;
     }
 
-    public void saveOrUpdateProdottiNelCarrello(List<ProdottiNelCarrello> prodottiNelCarrello) {
+    public void saveOrUpdateProdottiNelCarrello(ProdottiNelCarrello prodottiNelCarrello) {
         Session currentSession = entityManager.unwrap(Session.class);
 
-        for (ProdottiNelCarrello p: prodottiNelCarrello) {
-            currentSession.saveOrUpdate(p);
-        }
+            currentSession.saveOrUpdate(prodottiNelCarrello);
+
     }
 
     public void deleteProdottiNelCarrello(List<ProdottiNelCarrello> prodottiNelCarrello) {

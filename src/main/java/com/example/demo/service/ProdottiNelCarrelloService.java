@@ -23,7 +23,7 @@ public class ProdottiNelCarrelloService {
         return prodottiNelCarrelloDao.getProdottiNelCarrelloById(id);
     }
 
-    public void saveOrUpdateProdottiNelCarrello(List<ProdottiNelCarrello> prodottiNelCarrello){
+    public void saveOrUpdateProdottiNelCarrello(ProdottiNelCarrello prodottiNelCarrello){
         prodottiNelCarrelloDao.saveOrUpdateProdottiNelCarrello(prodottiNelCarrello);
     }
 

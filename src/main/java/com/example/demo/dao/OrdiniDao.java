@@ -36,12 +36,11 @@ public class OrdiniDao {
         return o;
     }
 
-    public void saveOrUpdateOrdini(List<Ordini> ordini) {
+    public void saveOrUpdateOrdini(Ordini ordini) {
         Session currentSession = entityManager.unwrap(Session.class);
 
-        for (Ordini o : ordini) {
-            currentSession.saveOrUpdate(o);
-        }
+            currentSession.saveOrUpdate(ordini);
+
     }
 
     public void deleteOrdini(List<Ordini> ordini) {
