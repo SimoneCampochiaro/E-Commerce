@@ -17,7 +17,12 @@ purchaseBtn.addEventListener('click', ()=>{
         fetch(urlAPI, {
             method :"POST"
         }).then(r=> r.json()).then((r)=>{
-            alert("Ordine Effettuato. Effettuare il ritiro il :" +r.dataConsegna);
+            //alert("Ordine Effettuato. Effettuare il ritiro il :" +r.dataConsegna);
+            var url = "http://localhost:8080/api/get-ordine-where";
+            fetch(url, {
+                method: "POST"
+            }).then(
+                window.location.replace("http://localhost:63342/E-Commerce/demo/web/profilo.html?q=1"))
         })
     }
 })
@@ -139,7 +144,6 @@ function carica(id) {
             div4.querySelector("button").addEventListener("click", function (e) {
                 let idProdottoCarrello = (e.currentTarget.id)
                 console.log("Ho cliccato")
-                //addToCartClicked(e, idProdottoCarrello, div1.innerHTML, div2.innerHTML);
                 addItemToCart(idProdottoCarrello, div1.innerHTML, div2.innerHTML);
                 updateCartPrice();
                 performRequest(idProdottoCarrello)
