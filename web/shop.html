@@ -46,16 +46,20 @@
     <!--  cart modal  -->
     <div class="cart-modal-overlay">
         <div class="cart-modal">
-            <i id="close-btn" class="fas fa-times"></i>
+            <i id="close-btn" class="fa fa-times"></i>
             <h1 class="cart-is-empty">Cart is empty</h1>
 
             <div class="product-rows">
 
             </div>
             <div class="total">
-                <h1 class="cart-total">TOTAL</h1>
-                <span class="total-price">$0</span>
-                <button class="purchase-btn">PURCHASE</button>
+                <h1 class="cart-total">Totale</h1>
+                <div class="d-flex flex-row justify-content-center">
+                    <h3 style="color:white">&#8364</h3>
+                    <span class="total-price" style="padding-left: 5px; padding-top: 19px">0</span>
+                </div>
+
+                <button class="purchase-btn">Acquista</button>
             </div>
         </div>
     </div>
@@ -82,7 +86,7 @@
                     <a href="shop.html" class="nav-link">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Login</a>
+                    <a href="login_reg.html" class="nav-link">Login</a>
                 </li>
             </ul>
         </nav>
@@ -130,7 +134,7 @@
 
         <div class = "info d-flex flex-row justify-content-between">
 
-            <div style = "padding-right: 100px;">
+            <div style = "padding-right: 100px;padding-top: 20px;">
                 <div class="info_prodotto">
                     <label>
                         Nome
@@ -145,7 +149,7 @@
             </div>
 
             <div>
-                <div class="info_prodotto ">
+                <div class="info_prodotto" style="padding-top: 20px;">
                     <label>
                         Quantita'
                     </label>
@@ -161,6 +165,7 @@
                 <div class="product-price product_info prezzo">
 
                 </div>
+                    <h3 style="padding-left: 5px; padding-top: 10px">&#8364</h3>
             </div>
 
             <div class="product-button button">

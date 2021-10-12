@@ -1,7 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+
 
 img {
     max-width: 100%;
@@ -11,25 +8,6 @@ img {
 .cart-btn {
     display: flex;
     justify-content: flex-end;
-}
-
-#cart {
-    position: relative;
-    font-size: 2rem;
-    cursor: pointer;
-    margin: 1em 4em 0 0;
-}
-
-.cart-quantity {
-    color: white;
-    background-color: red;
-    padding: .2em .3em;
-    position: absolute;
-    margin: .8em 7.5em 0 0;
-    right: 0;
-    border: solid 2px red;
-    border-radius: 15px;
-    font-weight: bolder;
 }
 
 .items-container {
@@ -57,8 +35,9 @@ img {
 .product-price {
     padding-top: 1em;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
+
 
 .cart-modal-overlay {
     position: fixed;
@@ -74,7 +53,7 @@ img {
 .cart-modal {
     height: 100vh;
     width: 50%;
-    background-color: rgb(50,50,50);
+    background-color: rgb(38,38,38);
     float: right;
     overflow: scroll;
     overflow-x: hidden;
@@ -104,6 +83,7 @@ img {
 }
 
 .cart-total {
+    margin-top: 3em;
     color: white;
 }
 
@@ -113,10 +93,28 @@ img {
     display: block;
 }
 
+.cart-name
+{
+    padding-left: 8em;
+    padding-top: 2em;
+}
+
+.cart-price
+{
+    padding-top: 2em;
+    padding-left: 3em;
+}
+.cart-number
+{
+    padding-top: 2em;
+}
+
 .purchase-btn {
-    font-size: 1rem;
+    font-family: sanse-serif;
+    font-size: 1.4rem;
     font-weight: bolder;
-    background-color: green;
+    letter-spacing: 1px;
+    background-color: #FF0075;
     color: white;
     padding: 1em 2em;
     border-radius: 10px;

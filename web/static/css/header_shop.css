@@ -50,25 +50,52 @@ header
 
 .icon
 {
-	padding-top: 8px;
+	padding-top: 10px;
 }
 
-
-.icon1
+a
 {
-	padding-right: 40px;
+	color: black;
 }
-.icon1:hover
+
+a:hover
 {
 	color: #FF0075;
-	cursor: pointer;
 }
+
+/*popup header style*/
+#cart {
+	position: relative;
+	font-size: 3rem;
+	cursor: pointer;
+	margin: 0.3em 4em 0 0;
+}
+
+.cart-btn .icon2
+{
+	color: black;
+	width: 50px;
+}
+
+.cart-quantity {
+	color: white;
+	background-color: #FF0075;
+	padding: .1em .1em;
+	position: absolute;
+	margin: .10em 13em 0 0;
+	right: 0;
+	border: solid 2px #FF0075;
+	border-radius: 15px;
+	font-weight: bolder;
+}
+
 .icon2:hover
 {
 	color: #FF0075;
-	cursor: pointer;
 }
 
+
+/*popup header style*/
 
 #logo img
 {

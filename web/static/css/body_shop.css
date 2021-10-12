@@ -1,3 +1,4 @@
+
 .container
 {
 	padding: 0;
@@ -80,7 +81,6 @@ article h1
 	font-family: sans-serif;
 	font-size: 15px;
 	font-weight: bold;
-	padding-top: 8px;
 	list-style: none;
 	width: 200px;
 }

@@ -84,7 +84,7 @@ function updateCartPrice() {
         console.log(cartRow)
 
     }
-    document.getElementsByClassName('total-price')[0].innerText =  '$' + total
+    document.getElementsByClassName('total-price')[0].innerText =  total
 
     document.getElementsByClassName('cart-quantity')[0].textContent = i
 }
