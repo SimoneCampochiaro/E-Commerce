@@ -25,7 +25,7 @@ public class ProdottiNelCarrello {
     @JsonIgnoreProperties("carrello")
     private Carrello carrello;
 
-    @JoinColumn(name = "id_prodotto")
+    @JoinColumn(name = "id_prodotto1")
     @ManyToOne
     @JsonIgnore
     private Prodotti prodotti;

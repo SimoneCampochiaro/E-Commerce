@@ -1,7 +1,7 @@
 window.addEventListener("load", function (Event) {
     var queryString = window.location.search;
     var urlParams = new URLSearchParams(queryString);
-    var mostra = urlParams.get('q=1')
+    var mostra = urlParams.get('q')
     console.log("mostra "+mostra);
     carica(mostra);
 
@@ -21,7 +21,7 @@ function carica(q) {
         return response.json()
     }).then(function (data) {
 
-        console.log(data) //Cancellare dopo aver fatto la post request
+        console.log(data)
         let clientTemplate = document.querySelector('.cliente');
         clientTemplate.setAttribute("q", 'cliente-' + data.idCliente)
         let div1=clientTemplate.querySelector('.cliente-nome')
@@ -36,6 +36,11 @@ function carica(q) {
         div5.innerHTML=`${data.localita}`
         let div6=clientTemplate.querySelector('.cliente-cap')
         div6.innerHTML=`${data.cap}`
+        let div7=clientTemplate.querySelector('.cliente-provincia')
+        div7.innerHTML=`${data.provincia}`
+        let div8=clientTemplate.querySelector('.cliente-email')
+        div8.innerHTML=`${data.email}`
+
 
 
     })

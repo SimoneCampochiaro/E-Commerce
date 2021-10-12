@@ -29,7 +29,7 @@ public class Ordini {
     private Calendar oraConsegna;
 
 
-    @JoinColumn(name = "id_carrello")
+    @JoinColumn(name = "id_carrello1")
     @ManyToOne
     @JsonIgnoreProperties("ordini")
     private Carrello carrello;
