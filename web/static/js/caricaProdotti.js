@@ -40,8 +40,6 @@ function carica(id) {
             div4.querySelector("button").addEventListener("click",function (e){
                 let idProdottoCarrello= (e.currentTarget.id)
             })
-
-
             document.querySelector('.products').appendChild(productTemplate)
 
         })
