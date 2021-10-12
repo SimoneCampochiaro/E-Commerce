@@ -58,7 +58,7 @@
     </div>
 </header>
 
-<div class="container_profilo prodotto d-flex flex-column justify-content-between align-items-center">
+<div class="container_profilo cliente d-flex flex-column justify-content-between align-items-center">
 
     <div class = "info_profilo d-flex flex-row justify-content-between align-items-start">
         <div class="campo">
@@ -66,15 +66,21 @@
         </div>
 
         <div class="campo">
-            <h5>nominativo</h5>
-            <h5>username</h5>
-            <h5>codice_fiscale</h5>
+            <h5>Nome</h5>
+            <div  class="cliente-nome"></div>
+            <h5>Username</h5>
+            <div class="cliente-username"></div>
+            <h5>Codice Fiscale</h5>
+            <div class="cliente-cf"></div>
         </div>
 
         <div class="campo">
             <h5>indirizzo</h5>
+            <div class="cliente-indirizzo"></div>
             <h5>localita</h5>
+            <div class="cliente-localita"></div>
             <h5>cap</h5>
+            <div class="cliente-cap"></div>
         </div>
 
         <div class="campo">
@@ -110,5 +116,6 @@
 </div>
 
 <script src="static/js/header.js"></script>
+<script scr="static/js/profiloLoggato.js"></script>
 </body>
 </html>

@@ -39,11 +39,51 @@ function carica(id) {
             div4.innerHTML=`<button class="add-to-cart" id="${prodotto.idProdotto}">Aggiungi al carrello</button>`
             div4.querySelector("button").addEventListener("click",function (e){
                 let idProdottoCarrello= (e.currentTarget.id)
+                console.log("Ho cliccato" )
+                addToCartClicked(e, idProdottoCarrello);
+
             })
             document.querySelector('.products').appendChild(productTemplate)
 
         })
 
+        function addToCartClicked (e, id) {
+            button = e.target;
+            let productTemplate = document.querySelector('.prodotto');
+            productTemplate.setAttribute( )
+            let div=productTemplate.querySelector(`.prodotto-img_dettagli`)
+            div.innerHTML=`<img id="${data.idProdotto}" class="img_dettagli" src="${data.linkImmagine}">`
+            let div1=productTemplate.querySelector('.prodotto-nome')
+            div1.innerHTML=`${data.componente}`
+            let div2=productTemplate.querySelector('.prodotto-prezzo')
+            div2.innerHTML=`${data.prezzoDiVendita + "&#8364"}`
+
+            //addItemToCart (price, imageSrc);
+            console.log(div1.innerHTML)
+            //updateCartPrice()
+        }
+
 
     })
+}
+
+function aggiungiAlCarrello(id){
+
+
+
+   /*function addItemToCart (price, imageSrc) {
+        var productRow = document.createElement('div');
+        productRow.classList.add('product-row');
+        var productRows = document.getElementsByClassName('product-rows')[0];
+        var cartImage = document.getElementsByClassName('cart-image');
+
+        for (var i = 0; i < cartImage.length; i++) {
+            if (cartImage[i].src == imageSrc) {
+                alert('This item has already been added to the cart')
+                return;
+            }
+        }
+    }
+
+    */
 }
