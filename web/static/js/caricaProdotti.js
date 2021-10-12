@@ -36,7 +36,10 @@ function carica(id) {
             let div3=productTemplate.querySelector('.product-quantity')
             div3.innerHTML=`${prodotto.quantita}`
             let div4=productTemplate.querySelector('.product-button')
-            div4.innerHTML='<button class="add-to-cart" id="${prodotto.idProdotto}">Aggiungi al carrello</button>'
+            div4.innerHTML=`<button class="add-to-cart" id="${prodotto.idProdotto}">Aggiungi al carrello</button>`
+            div4.querySelector("button").addEventListener("click",function (e){
+                let idProdottoCarrello= (e.currentTarget.id)
+            })
 
 
             document.querySelector('.products').appendChild(productTemplate)
