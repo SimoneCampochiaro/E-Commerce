@@ -22,7 +22,6 @@ public class eMailSender {
             // Sender's email ID needs to be mentioned
             String from = "e-commerce-jaba37@libero.it";
 
-            // Assuming you are sending email from through gmails smtp
             String host = "smtp.libero.it";
 
             // Get system properties

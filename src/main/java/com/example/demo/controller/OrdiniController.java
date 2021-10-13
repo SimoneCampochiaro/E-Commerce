@@ -37,7 +37,7 @@ public class OrdiniController {
     }
 
     @GetMapping("/get-ordine-where")
-    public List<Ordini> getOrdiniWhere(){
+    public List<String> getOrdiniWhere(){
         return ordiniService.getOrdiniWhere();
     }
 

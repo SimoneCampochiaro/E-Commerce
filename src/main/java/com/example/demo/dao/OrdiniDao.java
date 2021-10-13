@@ -6,6 +6,7 @@ import com.example.demo.model.Clienti;
 import com.example.demo.model.Ordini;
 import com.example.demo.model.ProdottiNelCarrello;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -23,10 +24,22 @@ public class OrdiniDao {
         return currentSession.createQuery("FROM Ordini", Ordini.class).getResultList();
     }
 
-    public List<Ordini> getOrdiniWhere() {
+    public List<Object[]> getOrdiniWhere() {
         Session currentSession = entityManager.unwrap(Session.class);
-        return currentSession.createQuery("SELECT o FROM Prodotti AS p INNER JOIN ProdottiNelCarrello AS pc ON p.idProdotto = pc.idProdottoNelCarrello INNER JOIN Carrello AS c ON pc.idProdottoNelCarrello = c.idCarrello INNER JOIN Ordini AS o ON c.idCarrello = o.carrello.idCarrello INNER JOIN Clienti AS ac ON o.clienti.idCliente = ac.idCliente WHERE ac.idCliente = 2 ", Ordini.class).getResultList();
+        Query<String> query = currentSession.createQuery("SELECT p.componente FROM Prodotti p INNER JOIN ProdottiNelCarrello pc INNER JOIN Carrello c INNER JOIN Ordini o INNER JOIN Clienti ac" +
+                " WHERE (p.idProdotto = pc.idProdottoNelCarrello) AND (pc.idProdottoNelCarrello = c.idCarrello) AND (c.idCarrello = o.carrello.idCarrello)" +
+                " AND (o.clienti.idCliente = ac.idCliente) AND ac.idCliente = 2 ", String.class);
+        System.out.println(query);
+        return query.getResultList();
     }
+    /*
+    *
+    * public List<Prenotazioni> getPrenotazioniByIdUtente(Integer id){
+        Session currentSession = entityManager.unwrap(Session.class);
+        Query<Prenotazioni> query = currentSession.createQuery("FROM Prenotazioni WHERE anagrafica.idAnagrafica = :id", Prenotazioni.class);
+        query.setParameter("id", id);
+        return query.getResultList();
+    }*/
 
 
 

@@ -36,5 +36,5 @@ public class OrdiniService {
         ordiniDao.deleteAOrdiniById(id);
     }
 
-    public List<Ordini> getOrdiniWhere(){ return ordiniDao.getOrdiniWhere();}
+    public List<String> getOrdiniWhere(){ return ordiniDao.getOrdiniWhere();}
 }

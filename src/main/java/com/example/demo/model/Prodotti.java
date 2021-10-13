@@ -1,5 +1,6 @@
 package com.example.demo.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import org.hibernate.annotations.Type;
 
@@ -47,11 +48,13 @@ public class Prodotti {
     @JoinColumn(name = "id_anagrafica_fornitore")
     @ManyToOne(cascade ={CascadeType.ALL})
     @JsonIgnore
+    @JsonIgnoreProperties("prodotti")
     private Fornitori fornitori;
 
     @JoinColumn(name = "id_assemblato")
     @ManyToOne(cascade ={CascadeType.ALL})
     @JsonIgnore
+    @JsonIgnoreProperties("prodotti")
     private Assemblati assemblati;
 
     @OneToMany(mappedBy = "prodotti")

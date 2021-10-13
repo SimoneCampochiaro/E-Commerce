@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
@@ -29,11 +30,13 @@ public class Ordini {
 
     @JoinColumn(name = "id_carrello1")
     @ManyToOne(cascade ={CascadeType.ALL})
+    @JsonIgnore
     @JsonIgnoreProperties("ordini")
     private Carrello carrello;
 
     @JoinColumn(name = "id_anagrafica_cliente")
     @ManyToOne(cascade ={CascadeType.ALL})
+    @JsonIgnore
     @JsonIgnoreProperties("ordini")
     private Clienti clienti;
 
