@@ -11,10 +11,10 @@ import java.util.Properties;
 
 @Component
 public class MailSender2 {
-    private final static String SMTP_HOST = "smtp.libero.it";
-    private final static String SMTP_PORT = "465";
+    private final static String SMTP_HOST = "smtp.gmail.com";
+    private final static String SMTP_PORT = "587";
     private final static String SMTP_AUTH = "true";
-    private final static String SMTP_USER = "e-commerce-jaba37@libero.it";
+    private final static String SMTP_USER = "e.commerce.jaba37@gmail.com";
     private final static String SMTP_PWD = "37Jaba37!";
 
     public void send(String destinatario, String oggetto, String messaggio){

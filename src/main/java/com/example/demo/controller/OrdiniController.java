@@ -63,7 +63,7 @@ public class OrdiniController {
         String dest = "iacovelli210302@gmail.com";
                 //c.getEmail();
         String oggetto= "E-Commerce Comunicazione di Servizio";
-        String messaggio="Complimenti!! Hai completato il tuo ordine, ti aspettiamo in negozio per il ritiro delle merce il ";
+        String messaggio="Complimenti!! Hai completato il tuo ordine, ti aspettiamo in negozio per il ritiro delle merce il "+ldt;
         mailSender2.send(dest, oggetto, messaggio);
 
         return ordine;
