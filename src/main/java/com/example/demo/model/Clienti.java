@@ -10,7 +10,9 @@ import java.util.List;
 @Table(name = "anagrafica_clienti")
 @Data
 public class Clienti {
-    @Id @GeneratedValue(strategy =  GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @Column(name = "id_anagrafica_clienti")
     private Integer idCliente;
 

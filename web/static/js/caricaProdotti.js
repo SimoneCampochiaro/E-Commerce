@@ -22,7 +22,7 @@ purchaseBtn.addEventListener('click', ()=>{
             fetch(url, {
                 method: "POST"
             }).then(
-                window.location.replace("http://localhost:63342/E-Commerce/demo/web/profilo.html?q=1"))
+                window.location.replace("http://localhost:63342/E-Commerce/demo/web/profilo.html?q=2"))
         })
     }
 })

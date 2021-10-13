@@ -13,11 +13,10 @@ import javax.mail.internet.MimeMessage;
 
 public class eMailSender {
 
-        public static void main(String[] args) {
 
-
+    public void send2(String dest) {
             // Recipient's email ID needs to be mentioned.
-            String to = "iacovelli210302@gmail.com";
+            // String to = "iacovelli210302@gmail.com";
 
             // Sender's email ID needs to be mentioned
             String from = "e-commerce-jaba37@libero.it";
@@ -55,7 +54,7 @@ public class eMailSender {
                 message.setFrom(new InternetAddress(from));
 
                 // Set To: header field of the header.
-                message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+                message.addRecipient(Message.RecipientType.TO, new InternetAddress(dest));
 
                 // Set Subject: header field
                 message.setSubject("Prenotazione Ordine");

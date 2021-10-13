@@ -1,13 +1,11 @@
 package com.example.demo.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
-
-import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -15,7 +13,8 @@ import java.util.Date;
 @Data
 public class Ordini {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_ordine")
     private Integer idOrdine;
 
@@ -29,13 +28,13 @@ public class Ordini {
 
 
     @JoinColumn(name = "id_carrello1")
-    @ManyToOne(cascade ={CascadeType.ALL})
+    @ManyToOne
     @JsonIgnore
     @JsonIgnoreProperties("ordini")
     private Carrello carrello;
 
     @JoinColumn(name = "id_anagrafica_cliente")
-    @ManyToOne(cascade ={CascadeType.ALL})
+    @ManyToOne
     @JsonIgnore
     @JsonIgnoreProperties("ordini")
     private Clienti clienti;

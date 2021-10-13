@@ -11,7 +11,8 @@ import javax.persistence.*;
 @Data
 public class ProdottiNelCarrello {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_prodotto_nel_carrello")
     private Integer idProdottoNelCarrello;
 

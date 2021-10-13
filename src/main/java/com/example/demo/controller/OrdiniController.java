@@ -5,6 +5,8 @@ import com.example.demo.model.*;
 import com.example.demo.service.CarrelloService;
 import com.example.demo.service.ClientiService;
 import com.example.demo.service.OrdiniService;
+import com.example.demo.utils.MailSender2;
+
 import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +27,8 @@ public class OrdiniController {
     private CarrelloService carrelloService;
     @Autowired
     private ClientiService clientiService;
+    @Autowired
+    private MailSender2 mailSender2;
 
     @GetMapping("/get-ordine")
     public List<Ordini> getOrdini(){
@@ -36,9 +40,9 @@ public class OrdiniController {
         return ordiniService.getOrdiniById(id);
     }
 
-    @GetMapping("/get-ordine-where")
-    public List<String> getOrdiniWhere(){
-        return ordiniService.getOrdiniWhere();
+    @GetMapping("/get-ordine-where/{id}")
+    public List<String> getOrdiniWhere(@PathVariable("id") Integer id){
+        return ordiniService.getOrdiniWhere(id);
     }
 
     @PostMapping("/save-ordine/{idCarrello}/{idCliente}")
@@ -56,6 +60,12 @@ public class OrdiniController {
         }
         ordine.setImporto(totale);
         ordiniService.saveOrUpdateOrdini(ordine);
+        String dest = "iacovelli210302@gmail.com";
+                //c.getEmail();
+        String oggetto= "E-Commerce Comunicazione di Servizio";
+        String messaggio="Complimenti!! Hai completato il tuo ordine, ti aspettiamo in negozio per il ritiro delle merce il ";
+        mailSender2.send(dest, oggetto, messaggio);
+
         return ordine;
     }
 

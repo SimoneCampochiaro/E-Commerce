@@ -1,7 +1,6 @@
 package com.example.demo.service;
 
 import com.example.demo.dao.OrdiniDao;
-import com.example.demo.model.OrdinePerCliente;
 import com.example.demo.model.Ordini;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,5 +36,5 @@ public class OrdiniService {
         ordiniDao.deleteAOrdiniById(id);
     }
 
-    public List<String> getOrdiniWhere(){ return ordiniDao.getOrdiniWhere();}
+    public List<String> getOrdiniWhere(Integer id){ return ordiniDao.getOrdiniWhere(id);}
 }

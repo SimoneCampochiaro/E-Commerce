@@ -13,7 +13,8 @@ import java.util.List;
 @Data
 public class Carrello {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_carrello")
     private Integer idCarrello;
 

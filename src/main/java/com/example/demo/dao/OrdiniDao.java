@@ -8,10 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import java.io.Serializable;
 import java.util.List;
 
 @Repository
-public class OrdiniDao {
+public class OrdiniDao implements Serializable {
 
     @Autowired
     private EntityManager entityManager;
@@ -21,12 +22,18 @@ public class OrdiniDao {
         return currentSession.createQuery("FROM Ordini", Ordini.class).getResultList();
     }
 
-    public List<String> getOrdiniWhere() {
+
+    public List<String> getOrdiniWhere(Integer id) {
+
         Session currentSession = entityManager.unwrap(Session.class);
-        Query<String> query = currentSession.createQuery("FROM OrdinePerCliente", String.class);
-        System.out.println(query);
-        return query.getResultList();
+        Query<String> query = currentSession.createQuery("SELECT p.componente FROM Prodotti p INNER JOIN p.prodottiNelCarrello pc INNER JOIN pc.carrello c INNER JOIN c.ordini o INNER JOIN o.clienti ac WHERE ac.idCliente = :id", String.class );
+
+        query.setParameter("id", id);
+        return  query.getResultList();
     }
+
+
+
 /*
     public List<String> getOrdiniWhere() {
         Session currentSession = entityManager.unwrap(Session.class);
@@ -38,9 +45,7 @@ public class OrdiniDao {
     }
 
 
-    }*/
-
-
+ */
 
     public Ordini getOrdiniById(Integer id) {
         Session currentSession = entityManager.unwrap(Session.class);
