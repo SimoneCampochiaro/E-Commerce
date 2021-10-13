@@ -14,8 +14,35 @@ header
 
 .campo
 {
-    padding-top: 20px;
-    padding-right: 200px;
+    padding-top: 40px;
+    padding-right: 8em;
+}
+
+.campo h5
+{
+    font-weight: bold;
+    font-size:15px;
+}
+
+.fa-user-circle:before
+{
+    color: black;
+    font-size: 10rem;
+}
+
+.icon
+{
+    padding-top: 0px;
+}
+
+.icon1 a
+{
+    font-size: 2rem;
+}
+
+.fa fa-laptop
+{
+    padding-bottom: 20px;
 }
 
 .riepilogo
@@ -44,7 +71,7 @@ header
     color: black;
     text-decoration: none;
     line-height: 1.2;
-    font-weight: normal;
+    font-weight: bold;
     font-family: sans-serif;
     font-size: 17px;
     background-color: #FF443A;
@@ -52,4 +79,10 @@ header
     padding: 18px 24px;
     border: 0px solid #FF0073;
     cursor: pointer;
+    box-shadow: 8px 8px 30px #FF443A;
+}
+
+.cancella button:hover
+{
+    background-color: #ff3333;
 }
