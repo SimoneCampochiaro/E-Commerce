@@ -1,10 +1,7 @@
 package com.example.demo.dao;
 
 
-import com.example.demo.model.Carrello;
-import com.example.demo.model.Clienti;
-import com.example.demo.model.Ordini;
-import com.example.demo.model.ProdottiNelCarrello;
+import com.example.demo.model.*;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,19 +23,21 @@ public class OrdiniDao {
 
     public List<String> getOrdiniWhere() {
         Session currentSession = entityManager.unwrap(Session.class);
+        Query<String> query = currentSession.createQuery("FROM OrdinePerCliente", String.class);
+        System.out.println(query);
+        return query.getResultList();
+    }
+/*
+    public List<String> getOrdiniWhere() {
+        Session currentSession = entityManager.unwrap(Session.class);
         Query<String> query = currentSession.createQuery("SELECT p.componente FROM Prodotti p INNER JOIN p.prodottiNelCarrello pc INNER JOIN pc.carrello c INNER JOIN c.ordini o INNER JOIN o.clienti ac" +
                 " WHERE (p.idProdotto = pc.idProdottoNelCarrello) AND (pc.idProdottoNelCarrello = c.idCarrello) AND (c.idCarrello = o.carrello.idCarrello)" +
                 " AND (o.clienti.idCliente = ac.idCliente) AND ac.idCliente = 2 ", String.class);
         System.out.println(query);
         return query.getResultList();
     }
-    /*
-    *
-    * public List<Prenotazioni> getPrenotazioniByIdUtente(Integer id){
-        Session currentSession = entityManager.unwrap(Session.class);
-        Query<Prenotazioni> query = currentSession.createQuery("FROM Prenotazioni WHERE anagrafica.idAnagrafica = :id", Prenotazioni.class);
-        query.setParameter("id", id);
-        return query.getResultList();
+
+
     }*/
 
 
