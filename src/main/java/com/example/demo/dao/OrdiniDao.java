@@ -24,9 +24,9 @@ public class OrdiniDao {
         return currentSession.createQuery("FROM Ordini", Ordini.class).getResultList();
     }
 
-    public List<Object[]> getOrdiniWhere() {
+    public List<String> getOrdiniWhere() {
         Session currentSession = entityManager.unwrap(Session.class);
-        Query<String> query = currentSession.createQuery("SELECT p.componente FROM Prodotti p INNER JOIN ProdottiNelCarrello pc INNER JOIN Carrello c INNER JOIN Ordini o INNER JOIN Clienti ac" +
+        Query<String> query = currentSession.createQuery("SELECT p.componente FROM Prodotti p INNER JOIN p.prodottiNelCarrello pc INNER JOIN pc.carrello c INNER JOIN c.ordini o INNER JOIN o.clienti ac" +
                 " WHERE (p.idProdotto = pc.idProdottoNelCarrello) AND (pc.idProdottoNelCarrello = c.idCarrello) AND (c.idCarrello = o.carrello.idCarrello)" +
                 " AND (o.clienti.idCliente = ac.idCliente) AND ac.idCliente = 2 ", String.class);
         System.out.println(query);
