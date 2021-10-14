@@ -14,6 +14,14 @@
     padding-right: 8em;
 }
 
+.campo_riepilogo
+{
+    margin-right: 9.5em;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #FF0075;
+}
+
 .campo h5
 {
     font-weight: bold;
@@ -31,20 +39,13 @@
     padding-left: 150px;
 }
 
-.cancella
-{
-    padding-bottom: 20px;
-    padding-left: 750px;
-}
 
 .consegna
 {
     padding-top: 45px;
 }
 
-
-
-.cancella button
+.cancella
 {
     display: inline-block;
     text-align: center;
@@ -57,16 +58,18 @@
     font-size: 17px;
     background-color: #FF443A;
     border-radius: 30px;
-    padding: 18px 24px;
+    padding: 10px 14px;
     border: 0px solid #FF0073;
     cursor: pointer;
     box-shadow: 8px 8px 30px #FF443A;
 }
 
-.cancella button:hover
+.cancella:hover
 {
     background-color: #ff3333;
 }
+
+
 
 /*Header*/
 header
