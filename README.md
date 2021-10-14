@@ -1,4 +1,4 @@
-# E-Commerce
+# AssembliX
 Il committente ci ha richiesto di realizzare un sito web della vendita dei propri prodotti ovvero componenti e pc assemblati.
 Il negazio in particolare doveva offrire un'interfaccia di lista dei prodotti disponibili(ram,schede video, cpu,ecc..), 
 ogni articolo avrebbe dovuto avere una pagina correlata di dettaglio infine  una volta aggiunti i prodotti al carrello e 
