@@ -13,7 +13,7 @@ const cartModalOverlay = document.querySelector('.cart-modal-overlay');
 const purchaseBtn= document.querySelector('.purchase-btn');
 purchaseBtn.addEventListener('click', ()=>{
     if(!isNaN(idCarrello)){
-        let urlAPI= "http://localhost:8080/api/save-ordine/"+idCarrello+"/2";
+        let urlAPI= "http://localhost:8080/api/save-ordine/"+idCarrello+"/3";
         fetch(urlAPI, {
             method :"POST"
         }).then(r=> r.json()).then((r)=>{
@@ -22,7 +22,7 @@ purchaseBtn.addEventListener('click', ()=>{
             fetch(url, {
                 method: "POST"
             }).then(
-                window.location.replace("http://localhost:63342/E-Commerce/demo/web/profilo.html?q=2"))
+                window.location.replace("http://localhost:63342/E-Commerce/demo/web/profilo.html?q=3"))
         })
     }
 })

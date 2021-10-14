@@ -4,7 +4,7 @@ window.addEventListener("load", function (Event) {
     var mostra = urlParams.get('q')
     console.log("mostra "+mostra);
     carica(mostra);
-    caricaOrdini(2);
+    caricaOrdini(3);
 
 })
 
@@ -69,31 +69,10 @@ function caricaOrdini(id) {
             ord.appendChild(div)
         }
 
+    })
 
 
 
-        /* console.log(data)
-        data.forEach(ordine => {
-            let orderTemplate = document.querySelector('.order').cloneNode(true);
-            orderTemplate.classList.remove('d-none')
-            orderTemplate.setAttribute("id", 'order-' + ordine.componente)
-            /* let div2 = productTemplate.querySelector('.order-id')
-            div2.innerHTML = `${ordine.idOrdine}`
-
-
-            let div1 = orderTemplate.querySelector('.order-name')
-            div1.innerHTML = `${ordine.componente}`
-            /*let div3 = productTemplate.querySelector('.order-date')
-            div3.innerHTML = `${ordine.dataConsegna}`
-
-
-            document.querySelector('.orders').appendChild(orderTemplate)
-
-        */
-            })
-
-
-
-    }
+}
 
 

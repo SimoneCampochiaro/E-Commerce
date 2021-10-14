@@ -28,6 +28,12 @@ function checkResPwd(elem){
     }
 }
 
+
+    const bottone = document.querySelector('.login');
+    bottone.addEventListener('click',() =>{
+        window.location.replace("http://localhost:63342/E-Commerce/demo/web/shop.html");
+    })
+
 ToggleForm.addEventListener('click', ChangeForm)
 
 const menuIcon = document.querySelector
@@ -38,3 +44,4 @@ menuIcon.addEventListener("click", () =>
 {
     navbar.classList.toggle('change');
 });
+
