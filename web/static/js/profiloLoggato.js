@@ -4,6 +4,7 @@ window.addEventListener("load", function (Event) {
     var mostra = urlParams.get('q')
     console.log("mostra "+mostra);
     carica(mostra);
+    caricaOrdini(2);
 
 })
 
@@ -48,3 +49,51 @@ function carica(q) {
 
 
 }
+
+function caricaOrdini(id) {
+    let urlApi = "http://localhost:8080/api/get-ordine-where/"+id
+
+    console.log(urlApi)
+    fetch(urlApi,
+        {
+            method: "GET"
+        }).then(function (response) {
+        console.log(response)
+        return response.json()
+    }).then(function (data) {
+        let ord =document.querySelector('#order-name');
+        console.log(data)
+        for(let i=0; i<data.length; i++ ){
+            let div= document.createElement('div');
+            div.innerHTML= data[i]
+            ord.appendChild(div)
+        }
+
+
+
+
+        /* console.log(data)
+        data.forEach(ordine => {
+            let orderTemplate = document.querySelector('.order').cloneNode(true);
+            orderTemplate.classList.remove('d-none')
+            orderTemplate.setAttribute("id", 'order-' + ordine.componente)
+            /* let div2 = productTemplate.querySelector('.order-id')
+            div2.innerHTML = `${ordine.idOrdine}`
+
+
+            let div1 = orderTemplate.querySelector('.order-name')
+            div1.innerHTML = `${ordine.componente}`
+            /*let div3 = productTemplate.querySelector('.order-date')
+            div3.innerHTML = `${ordine.dataConsegna}`
+
+
+            document.querySelector('.orders').appendChild(orderTemplate)
+
+        */
+            })
+
+
+
+    }
+
+
