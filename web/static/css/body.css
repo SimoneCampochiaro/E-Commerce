@@ -36,6 +36,11 @@ body
  	cursor: pointer;
 }
 
+.paragrafo
+{
+	font-size: 18px;
+	color: black;
+}
 
 
 @media(max-width: 992px)
