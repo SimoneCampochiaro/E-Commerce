@@ -42,8 +42,8 @@
     <p>Login</p>
   </div>
   <div class="form-section">
-    <div class="form-control">
-      <form action="/" id="login">
+    <div class="form-control form-register">
+      <form method="POST" action="shop.html" id="login">
         <h1 class="titoloForm"><strong>Login</strong></h1>
         <div hidden class="form-cr">
           <input type="text" placeholder="Username" spellcheck="true" required="">
@@ -60,13 +60,15 @@
         <div class="form-cr accept"> </div>
 
         <div class="form-cr">
+          <a href="shop.html">
           <button type="submit">Sign in</button>
+          </a>
         </div>
       </form>
     </div>
 
-    <div class="form-control">
-      <form action="/" id="signup">
+    <div class="form-control form-login">
+      <form method="POST" action="shop.html" id="signup">
         <h1 class="titoloForm"><strong>Create Account</strong></h1>
         <div class="form-cr">
           <input type="text" placeholder="Username" spellcheck="true" required="">
